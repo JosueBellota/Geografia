@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución de Ejercicios Propuestos de Geografía</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 60px 0 0 0; /* Adjusted margin for fixed navbar */
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0056b3;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #007bff;
+        }
+        .navbar a.active {
+            background-color: #003d82;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .enunciado {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        .paso {
+            margin-bottom: 20px;
+        }
+        .resultado {
+            background-color: #d4edda;
+            border-left: 5px solid #155724;
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .math-sqrt {
+            white-space: nowrap;
+        }
+        .math-sqrt:before {
+            content: "√";
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+        .math-paren {
+            border-top: 1px solid #333;
+            padding-left: 5px;
+        }
+        .math-expr {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .ejercicio-contenido {
+            display: none; /* Hidden by default */
+        }
+        .quadrant-explanation {
+            margin: 25px 0;
+        }
+        .quadrant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .quadrant {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .quadrant h4 {
+            margin-top: 0;
+            color: #333;
+            border: none;
+            font-size: 0.9em;
+        }
+        .quadrant.active {
+            background-color: #e7f3fe;
+            border: 2px solid #0056b3;
+        }
+        .quadrant code {
+            font-size: 1.1em;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" onclick="mostrarEjercicio('ejercicio1'); return false;" class="active">Ejercicio 1</a>
+        <a href="#" onclick="mostrarEjercicio('ejercicio2'); return false;">Ejercicio 2</a>
+    </div>
+
+    <div class="container">
+        <h1>Resolución de Ejercicios Propuestos</h1>
+
+        <div id="ejercicio1" class="ejercicio-contenido">
+            <!-- Content of Exercise 1 remains unchanged -->
+            <h2>Ejercicio 1: Cálculo de la Longitud de una Ruta</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la longitud de una ruta formada por los puntos A, B, C y D con las coordenadas siguientes:
+                <ul>
+                    <li><strong>A:</strong> X = 720500 m, Y = 4375250 m</li>
+                    <li><strong>B:</strong> X = 720750 m, Y = 4377750 m</li>
+                    <li><strong>C:</strong> X = 720600 m, Y = 4377800 m</li>
+                    <li><strong>D:</strong> X = 720000 m, Y = 4375000 m</li>
+                </ul>
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para calcular la distancia entre dos puntos en un plano (distancia euclídea), utilizamos la fórmula derivada del teorema de Pitágoras:</p>
+            <div class="formula">
+                Distancia = <span class="math-sqrt"><span class="math-paren">(X₂ - X₁)² + (Y₂ - Y₁)²</span></span>
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Cálculo de la distancia del Tramo AB</h3>
+                <p>d(A,B) = <span class="math-sqrt"><span class="math-paren">(720750 - 720500)² + (4377750 - 4375250)²</span></span></p>
+                <p><strong>d(A,B) ≈ 2512.47 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Cálculo de la distancia del Tramo BC</h3>
+                <p>d(B,C) = <span class="math-sqrt"><span class="math-paren">(720600 - 720750)² + (4377800 - 4377750)²</span></span></p>
+                <p><strong>d(B,C) ≈ 158.11 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Cálculo de la distancia del Tramo CD</h3>
+                <p>d(C,D) = <span class="math-sqrt"><span class="math-paren">(720000 - 720600)² + (4375000 - 4377800)²</span></span></p>
+                <p><strong>d(C,D) ≈ 2863.56 m</strong></p>
+            </div>
+            <h3>Paso 4: Cálculo de la Longitud Total de la Ruta</h3>
+            <p>La longitud total es la suma de las distancias de cada tramo:</p>
+            <div class="formula">
+                Longitud Total = d(A,B) + d(B,C) + d(C,D)
+            </div>
+            <p>Longitud Total = 2512.47 m + 158.11 m + 2863.56 m</p>
+            <div class="resultado">
+                Longitud Total ≈ 5534.14 metros
+            </div>
+        </div>
+
+        <div id="ejercicio2" class="ejercicio-contenido">
+            <h2>Ejercicio 2: Cálculo de la Orientación entre Puntos</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular las orientaciones entre el punto A y B cuyas coordenadas son:
+                <ul>
+                    <li><strong>A:</strong> X = 721250 m, Y = 4361100 m</li>
+                    <li><strong>B:</strong> X = 721345 m, Y = 4361375 m</li>
+                </ul>
+                <strong>SOLUCIÓN PROPORCIONADA:</strong> ORIENTACION AB = 21,1752°
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para calcular la orientación (azimutal) desde el Norte, se usa la función <code>atan2(ΔX, ΔY)</code>. Es preferible a <code>tan⁻¹</code> porque gestiona los cuadrantes automáticamente.</p>
+
+            <div class="quadrant-explanation">
+                <h3>Equivalencia de <code>atan2(ΔX, ΔY)</code> con <code>tan⁻¹</code> por Cuadrante (para Azimut)</h3>
+                <p>Si tuviéramos que usar <code>tan⁻¹</code> para calcular el azimut (ángulo desde el Norte), necesitaríamos la siguiente lógica:</p>
+                <div class="quadrant-grid">
+                    <div class="quadrant">
+                        <h4>Cuadrante IV: Nor-Oeste<br>(-ΔX, +ΔY)</h4>
+                        <p><code>tan⁻¹(ΔX/ΔY) + 360°</code></p>
+                    </div>
+                    <div class="quadrant active">
+                        <h4>Cuadrante I: Nor-Este<br>(+ΔX, +ΔY)</h4>
+                        <p><code>tan⁻¹(ΔX/ΔY)</code></p>
+                        <p><strong>(Este es nuestro caso)</strong></p>
+                    </div>
+                    <div class="quadrant">
+                        <h4>Cuadrante III: Sur-Oeste<br>(-ΔX, -ΔY)</h4>
+                        <p><code>tan⁻¹(ΔX/ΔY) + 180°</code></p>
+                    </div>
+                    <div class="quadrant">
+                        <h4>Cuadrante II: Sur-Este<br>(+ΔX, -ΔY)</h4>
+                        <p><code>tan⁻¹(ΔX/ΔY) + 180°</code></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 1: Calcular ΔX y ΔY y determinar el cuadrante</h3>
+                <p><span class="math-expr">ΔX = X₂ - X₁ = 721345 - 721250 = +95 m</span></p>
+                <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4361375 - 4361100 = +275 m</span></p>
+                <p>Como ambos son positivos, estamos en el <strong>Cuadrante I (Nor-Este)</strong>.</p>
+            </div>
+
+            <p><strong>Nota sobre la unidad de la solución:</strong> El valor `21,1752°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
+            
+            <div class="paso">
+                <h3>Paso 2: Calcular el ángulo (en radianes)</h3>
+                <p>Dado que estamos en el Cuadrante I (Nor-Este), la fórmula aplicable utilizando la tangente inversa es:</p>
+                <div class="formula">
+                    <code>ángulo_rad = tan⁻¹(ΔX/ΔY)</code>
+                    <code>ángulo_rad = tan⁻¹(95/275)</code>
+                    <code>ángulo_rad ≈ tan⁻¹(0.34545)</code>
+                    <code>ángulo_rad ≈ 0.33282 radianes</code>
+                </div>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 3: Convertir a grados centesimales (gons)</h3>
+                <div class="formula">
+                    <code>ángulo_gon = radianes × (200 / π) ≈ 21.1882 gon</code>
+                </div>
+            </div>
+            
+            <div class="resultado">
+                <p>La orientación calculada es aproximadamente:</p>
+                <p><strong>ORIENTACIÓN AB ≈ 21.19 gon</strong></p>
+                <p>Este valor confirma que la solución `21,1752` estaba probablemente en grados centesimales (gons).</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarEjercicio(id) {
+            // Hide all exercise content
+            var contenidos = document.getElementsByClassName('ejercicio-contenido');
+            for (var i = 0; i < contenidos.length; i++) {
+                contenidos[i].style.display = 'none';
+            }
+
+            // Show the selected one
+            document.getElementById(id).style.display = 'block';
+
+            // Update active link in navbar
+            var links = document.querySelectorAll('.navbar a');
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            
+            // Find the link that corresponds to the id and set it to active
+            var activeLink = document.querySelector('.navbar a[onclick*="' + id + '"]');
+            if(activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // Show the first exercise by default on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarEjercicio('ejercicio1');
+        });
+    </script>
+
+</body>
+</html>
