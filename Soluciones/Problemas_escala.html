@@ -107,6 +107,7 @@
             <a href="#" onclick="mostrarEjercicio('ejercicio4'); return false;">Ejercicio 4</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio5'); return false;">Ejercicio 5</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio6'); return false;">Ejercicio 6</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio7'); return false;">Ejercicio 7</a>
         </div>
     </div>
 
@@ -287,6 +288,37 @@
             </div>
             <div class="resultado">
                 La escala del mapa es <strong>1:25,000</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio7" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 7: Calcular Área en el Mapa</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Obtener el valor del área en cm² de una parcela en un mapa a escala 1/25.000 cuya superficie es 6,75 km².
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para calcular el área en el mapa, utilizaremos la relación cuadrática de la escala que vincula el área real con el área en el mapa.</p>
+            <div class="formula">
+                Superficie en el Mapa = Superficie Real / (Denominador de la Escala)²
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Convertir la superficie real a la misma unidad base (cm²)</h3>
+                <p>Primero, convertimos la superficie real de kilómetros cuadrados a centímetros cuadrados para facilitar los cálculos. Sabiendo que 1 km = 100,000 cm:</p>
+                <p><span class="math-expr">1 km² = (100,000 cm)² = 10,000,000,000 cm²</span></p>
+                <p><span class="math-expr">Superficie Real (cm²) = 6.75 km² &times; 10,000,000,000 cm²/km² = 67,500,000,000 cm²</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Aplicar la fórmula con los datos</h3>
+                <p>Ahora, aplicamos la fórmula de la superficie en el mapa:</p>
+                <ul>
+                    <li><strong>Superficie Real:</strong> 67,500,000,000 cm²</li>
+                    <li><strong>Denominador de la Escala:</strong> 25,000</li>
+                </ul>
+                <p><span class="math-expr">Denominador de la Escala al cuadrado (e²) = (25,000)² = 625,000,000</span></p>
+                <p><span class="math-expr">Superficie en el Mapa (cm²) = 67,500,000,000 cm² / 625,000,000 = 108 cm²</span></p>
+            </div>
+            <div class="resultado">
+                El valor del área de la parcela en el mapa es de <strong>108 cm²</strong>.
             </div>
         </div>
 
