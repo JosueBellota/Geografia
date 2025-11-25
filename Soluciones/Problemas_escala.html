@@ -108,6 +108,9 @@
             <a href="#" onclick="mostrarEjercicio('ejercicio5'); return false;">Ejercicio 5</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio6'); return false;">Ejercicio 6</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio7'); return false;">Ejercicio 7</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio8'); return false;">Ejercicio 8</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio9'); return false;">Ejercicio 9</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio10'); return false;">Ejercicio 10</a>
         </div>
     </div>
 
@@ -319,6 +322,109 @@
             </div>
             <div class="resultado">
                 El valor del área de la parcela en el mapa es de <strong>108 cm²</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio8" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 8: Calcular Dimensiones de Papel</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Se quiere realizar un plano a escala 1/500 de una parcela de superficie 6 hectáreas 7 áreas y 47 centiáreas de forma rectangular. Sabiendo que uno de los lados mide 500 m, ¿cuál es la dimensión del papel para dibujar el plano? Márgenes en cada lado de 15 mm.
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Este problema requiere varios pasos: calcular el área total, determinar las dimensiones de la parcela, convertirlas a las dimensiones del dibujo según la escala y, finalmente, añadir los márgenes para encontrar el tamaño del papel.</p>
+            <div class="paso">
+                <h3>Paso 1: Calcular la Superficie Total en Metros Cuadrados (m²)</h3>
+                <p>Convertimos todas las unidades de superficie a metros cuadrados:</p>
+                <ul>
+                    <li>1 hectárea (ha) = 10,000 m² &rarr; 6 ha = 60,000 m²</li>
+                    <li>1 área (a) = 100 m² &rarr; 7 a = 700 m²</li>
+                    <li>1 centiárea (ca) = 1 m² &rarr; 47 ca = 47 m²</li>
+                </ul>
+                <p><span class="math-expr">Superficie Total = 60,000 + 700 + 47 = 60,747 m²</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular las Dimensiones Reales de la Parcela</h3>
+                <p>La parcela es rectangular. Conocemos el área y uno de los lados.</p>
+                <div class="formula">Ancho = Superficie / Largo</div>
+                <p><span class="math-expr">Ancho = 60,747 m² / 500 m = 121.494 m</span></p>
+                <p>Las dimensiones reales de la parcela son: <strong>500 m &times; 121.494 m</strong>.</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Calcular las Dimensiones del Dibujo en el Plano</h3>
+                <p>Aplicamos la escala 1:500 para convertir las dimensiones reales a las del plano.</p>
+                <div class="formula">Dimensión en Plano = Dimensión Real / Denominador de Escala</div>
+                <p><span class="math-expr">Largo en Plano = 500 m / 500 = 1 m = 100 cm</span></p>
+                <p><span class="math-expr">Ancho en Plano = 121.494 m / 500 = 0.242988 m &approx; 24.3 cm</span></p>
+                <p>El dibujo medirá <strong>100 cm &times; 24.3 cm</strong>.</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 4: Calcular las Dimensiones del Papel (añadiendo márgenes)</h3>
+                <p>Se requiere un margen de 15 mm (1.5 cm) en cada lado, por lo que añadimos el doble del margen a cada dimensión del dibujo.</p>
+                <p><span class="math-expr">Ancho del Papel = 100 cm + (2 &times; 1.5 cm) = 100 cm + 3 cm = 103 cm</span></p>
+                <p><span class="math-expr">Largo del Papel = 24.3 cm + (2 &times; 1.5 cm) = 24.3 cm + 3 cm = 27.3 cm</span></p>
+            </div>
+            <div class="resultado">
+                La dimensión del papel requerida para dibujar el plano con sus márgenes es de <strong>103 cm &times; 27.3 cm</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio9" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 9: Tamaño Mínimo Real de Objeto Cartografiable</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> ¿Cuál es el tamaño mínimo real de un objeto que se podrá cartografiar en un mapa a escala 1/25.000?
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para determinar el tamaño mínimo real de un objeto que puede ser cartografiado, se utiliza el concepto de precisión gráfica. La precisión gráfica se refiere al detalle más pequeño que un ojo humano puede percibir en un mapa, que comúnmente se establece entre 0.2 mm y 0.5 mm. Utilizaremos un valor de 0.2 mm como la precisión mínima.</p>
+            <div class="formula">
+                Tamaño Real Mínimo = Precisión Gráfica en el Mapa &times; Denominador de la Escala
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Establecer la precisión gráfica y el denominador de la escala</h3>
+                <ul>
+                    <li><strong>Precisión Gráfica en el Mapa:</strong> 0.2 mm</li>
+                    <li><strong>Denominador de la Escala:</strong> 25,000</li>
+                </ul>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Aplicar la fórmula y convertir unidades</h3>
+                <p>Calculamos el tamaño real mínimo en milímetros y luego lo convertimos a metros para una mejor comprensión.</p>
+                <p><span class="math-expr">Tamaño Real Mínimo (mm) = 0.2 mm &times; 25,000 = 5,000 mm</span></p>
+                <p><span class="math-expr">Tamaño Real Mínimo (m) = 5,000 mm / 1,000 mm/m = 5 m</span></p>
+            </div>
+            <div class="resultado">
+                El tamaño mínimo real de un objeto que se podrá cartografiar en un mapa a escala 1/25.000 es de <strong>5 metros</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio10" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 10: Calcular la Escala Máxima por Tolerancia</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Si nos indican que la tolerancia del mapa es 25 m, ¿cuál es la escala máxima que podemos utilizar para realizar un mapa?
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>La "tolerancia del mapa" se refiere a la distancia mínima real que debe ser discernible en el mapa. Este valor se relaciona directamente con la precisión gráfica, que es la mínima distancia que el ojo humano puede distinguir en el papel, comúnmente aceptada en 0.2 mm. La escala máxima que se puede usar es aquella donde esta tolerancia real se representa como la precisión gráfica en el mapa.</p>
+            <div class="formula">
+                Denominador de la Escala = Tolerancia Real / Precisión Gráfica en el Mapa
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Establecer los valores de Tolerancia y Precisión Gráfica</h3>
+                <ul>
+                    <li><strong>Tolerancia del Mapa (Real):</strong> 25 m</li>
+                    <li><strong>Precisión Gráfica en el Mapa:</strong> 0.2 mm</li>
+                </ul>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Convertir la Tolerancia a la misma unidad que la Precisión Gráfica (milímetros)</h3>
+                <p>Convertimos la tolerancia de metros a milímetros para que las unidades sean consistentes:</p>
+                <p><span class="math-expr">Tolerancia Real (mm) = 25 m &times; 1,000 mm/m = 25,000 mm</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Calcular el Denominador de la Escala</h3>
+                <p>Aplicamos la fórmula para encontrar el denominador de la escala:</p>
+                <p><span class="math-expr">Denominador de la Escala = 25,000 mm / 0.2 mm = 125,000</span></p>
+            </div>
+            <div class="resultado">
+                La escala máxima que se puede utilizar para el mapa es de <strong>1:125,000</strong>.
             </div>
         </div>
 
