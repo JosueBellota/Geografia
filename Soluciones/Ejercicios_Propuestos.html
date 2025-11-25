@@ -163,6 +163,7 @@
             <a href="#" onclick="mostrarEjercicio('ejercicio2'); return false;">Ejercicio 2</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio3'); return false;">Ejercicio 3</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio4'); return false;">Ejercicio 4</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio4.1'); return false;">Ejercicio 4.1 (Grados)</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio5'); return false;">Ejercicio 5</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio6'); return false;">Ejercicio 6</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio7'); return false;">Ejercicio 7</a>
@@ -437,6 +438,55 @@
             </div>
         </div>
 
+        <div id="ejercicio4.1" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 4.1: Cálculo de Orientación (Trabajando en Grados)</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la orientación de los puntos A y B (versión alternativa trabajando en grados sexagesimales).
+                <ul>
+                    <li><strong>A:</strong> X = 721345 m, Y = 4361375 m</li>
+                    <li><strong>B:</strong> X = 721460 m, Y = 4361095 m</li>
+                </ul>
+            </div>
+            <h3>Procedimiento de Resolución (usando grados):</h3>
+            <p>Esta es una versión alternativa del Ejercicio 4 donde todos los cálculos intermedios se realizan en <strong>grados sexagesimales</strong> en lugar de radianes, demostrando que el resultado final es el mismo.</p>
+            
+            <div class="paso">
+                <h3>Paso 1: Calcular ΔX y ΔY (igual que antes)</h3>
+                <p><span class="math-expr">ΔX = X₂ - X₁ = 721460 - 721345 = +115 m</span></p>
+                <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4361095 - 4361375 = -280 m</span></p>
+                <p>Como ΔX es positivo y ΔY es negativo, seguimos en el <strong>Cuadrante II (Sur-Este)</strong>.</p>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 2: Calcular el ángulo (en grados) y aplicar la corrección del cuadrante</h3>
+                <p>Usamos la función arcotangente (<code>tan⁻¹</code>) asegurándonos de que el resultado esté en grados. Luego, aplicamos la corrección sumando 180° porque estamos en el Cuadrante II.</p>
+                <div class="formula">
+                    <code>ángulo_base_deg = tan⁻¹(ΔX/ΔY)</code><br>
+                    <code>ángulo_base_deg = tan⁻¹(115/-280)</code><br>
+                    <code>ángulo_base_deg ≈ -22.33°</code><br>
+                    <hr>
+                    <code>ángulo_corregido_deg = ángulo_base_deg + 180°</code><br>
+                    <code>ángulo_corregido_deg ≈ -22.33° + 180°</code><br>
+                    <code>ángulo_corregido_deg ≈ 157.67°</code><br>
+                </div>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 3: Convertir de grados sexagesimales a grados centesimales (gons)</h3>
+                <p>Sabiendo que 400 gons equivalen a 360°, la fórmula de conversión es:</p>
+                <div class="formula">
+                    <code>ángulo_gon = ángulo_deg × (400 / 360)</code><br>
+                    <code>ángulo_gon ≈ 157.67 × (400 / 360)</code><br>
+                    <code>ángulo_gon ≈ 175.19 gon</code>
+                </div>
+            </div>
+            
+            <div class="resultado">
+                <p>La orientación calculada, trabajando en grados, es aproximadamente:</p>
+                <p><strong>ORIENTACIÓN AB ≈ 175.19 gon</strong></p>
+                <p>Este resultado es consistente con la solución original y demuestra que se puede operar en cualquiera de las dos unidades angulares siempre que se sea coherente.</p>
+            </div>
+        </div>
         <div id="ejercicio5" class="ejercicio-contenido">
             <h2>Ejercicio 5: Cálculo de la Orientación entre Puntos</h2>
             <div class="enunciado">
