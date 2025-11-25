@@ -1,0 +1,42 @@
+ejercicios propuestos
+
+Resolución del ejercicio 1:
+
+Calcular la longitud de una ruta formada por los puntos A, B, C y D con las coordenadas siguientes:
+
+A: X = 720500 m, Y = 4375250 m
+B: X = 720750 m, Y = 4377750 m
+C: X = 720600 m, Y = 4377800 m
+D: X = 720000 m, Y = 4375000 m
+
+Para calcular la distancia entre dos puntos en un plano (distancia euclídea), utilizamos la fórmula derivada del teorema de Pitágoras:
+Distancia = sqrt((X2 - X1)^2 + (Y2 - Y1)^2)
+
+Paso 1: Calcular la distancia del tramo AB.
+
+d(A,B) = sqrt((720750 - 720500)^2 + (4377750 - 4375250)^2)
+d(A,B) = sqrt(250^2 + 2500^2)
+d(A,B) = sqrt(62500 + 6250000)
+d(A,B) = sqrt(6312500)
+d(A,B) = 2512.47 m
+
+Paso 2: Calcular la distancia del tramo BC.
+d(B,C) = sqrt((720600 - 720750)^2 + (4377800 - 4377750)^2)
+d(B,C) = sqrt((-150)^2 + 50^2)
+d(B,C) = sqrt(22500 + 2500)
+d(B,C) = sqrt(25000)
+d(B,C) = 158.11 m
+
+Paso 3: Calcular la distancia del tramo CD.
+d(C,D) = sqrt((720000 - 720600)^2 + (4375000 - 4377800)^2)
+d(C,D) = sqrt((-600)^2 + (-2800)^2)
+d(C,D) = sqrt(360000 + 7840000)
+d(C,D) = sqrt(8200000)
+d(C,D) = 2863.56 m
+
+Paso 4: Calcular la longitud total de la ruta.
+Longitud total = d(A,B) + d(B,C) + d(C,D)
+Longitud total = 2512.47 m + 158.11 m + 2863.56 m
+Longitud total = 5534.14 m
+
+La longitud total de la ruta es de 5534.14 metros.

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución de Ejercicios de Escalas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 60px 0 0 0; /* Adjusted margin for fixed navbar */
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0056b3;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar .menu-icon {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        .ejercicio-links-container {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            max-height: 200px; /* Adjust as needed */
+            overflow-y: auto;
+        }
+        .ejercicio-links-container a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: left;
+        }
+        .ejercicio-links-container a:hover {
+            background-color: #007bff;
+        }
+        .ejercicio-links-container a.active {
+            background-color: #003d82;
+        }
+        .show {
+            display: flex;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .enunciado {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        .paso {
+            margin-bottom: 20px;
+        }
+        .resultado {
+            background-color: #d4edda;
+            border-left: 5px solid #155724;
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i> Ejercicios
+        </a>
+        <div id="ejercicio-links" class="ejercicio-links-container">
+            <a href="#" onclick="mostrarEjercicio('ejercicio1'); return false;" class="active">Ejercicio 1</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio2'); return false;">Ejercicio 2</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio3'); return false;">Ejercicio 3</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio4'); return false;">Ejercicio 4</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio5'); return false;">Ejercicio 5</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio6'); return false;">Ejercicio 6</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Resolución de Problemas de Escalas</h1>
+
+        <div id="ejercicio1" class="ejercicio-contenido">
+            <h2>Ejercicio 1: Calcular Distancia Real</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> En un mapa a escala 1/50000 se marcan dos pueblos cuya distancia en el plano es de 26 cm. ¿Cuál es la distancia en la realidad en km?
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para resolver este problema, utilizamos la fórmula fundamental de las escalas, que relaciona la distancia en el mapa, la distancia en la realidad y la escala.</p>
+            <div class="formula">
+                Distancia Real = Distancia en el Mapa &times; Denominador de la Escala
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Aplicar la fórmula con los datos del problema</h3>
+                <p>Sustituimos los valores conocidos:</p>
+                <ul>
+                    <li><strong>Distancia en el Mapa:</strong> 26 cm</li>
+                    <li><strong>Denominador de la Escala:</strong> 50,000</li>
+                </ul>
+                <p><span class="math-expr">Distancia Real (cm) = 26 cm &times; 50,000 = 1,300,000 cm</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Convertir la distancia real a kilómetros</h3>
+                <p>Sabiendo que 1 km son 100,000 cm, convertimos el resultado:</p>
+                <p><span class="math-expr">Distancia Real (km) = 1,300,000 cm / 100,000 cm/km = 13 km</span></p>
+            </div>
+            <div class="resultado">
+                La distancia real entre los dos pueblos es de <strong>13 km</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio2" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 2: Calcular Distancia en el Mapa</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> ¿Cuánto debe medir una línea en un mapa 1/250.000 si valor real es 15 km?
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para encontrar la distancia en el mapa, debemos despejar la fórmula de la escala.</p>
+            <div class="formula">
+                Distancia en el Mapa = Distancia Real / Denominador de la Escala
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Convertir la distancia real a la misma unidad que el mapa (cm)</h3>
+                <p>Sabiendo que 1 km son 100,000 cm:</p>
+                <p><span class="math-expr">Distancia Real (cm) = 15 km &times; 100,000 cm/km = 1,500,000 cm</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Aplicar la fórmula con los datos convertidos</h3>
+                <p>Sustituimos los valores:</p>
+                <ul>
+                    <li><strong>Distancia Real:</strong> 1,500,000 cm</li>
+                    <li><strong>Denominador de la Escala:</strong> 250,000</li>
+                </ul>
+                <p><span class="math-expr">Distancia en el Mapa (cm) = 1,500,000 cm / 250,000 = 6 cm</span></p>
+            </div>
+            <div class="resultado">
+                La línea en el mapa debe medir <strong>6 cm</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio3" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 3: Calcular la Escala</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> En un mapa de escala desconocida la distancia entre 2 puntos es 5,7 cm; en la realidad esa distancia es 11,4 km. Calcular la escala.
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para calcular la escala, necesitamos encontrar la relación entre la distancia en el mapa y la distancia real, asegurándonos de que ambas estén en la misma unidad.</p>
+            <div class="formula">
+                Denominador de la Escala = Distancia Real / Distancia en el Mapa
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Convertir la distancia real a centímetros</h3>
+                <p>Sabiendo que 1 km son 100,000 cm:</p>
+                <p><span class="math-expr">Distancia Real (cm) = 11.4 km &times; 100,000 cm/km = 1,140,000 cm</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular el denominador de la escala</h3>
+                <p>Ahora dividimos la distancia real en cm por la distancia en el mapa en cm:</p>
+                <p><span class="math-expr">Denominador de la Escala = 1,140,000 cm / 5.7 cm = 200,000</span></p>
+            </div>
+            <div class="resultado">
+                La escala del mapa es <strong>1:200,000</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio4" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 4: Calcular la Escala con Unidades Mixtas</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> En un mapa de escala desconocida la distancia entre 2 puntos es 46 mm; en la realidad esa distancia es de 345 m. Calcular la escala.
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>El procedimiento es el mismo que en el ejercicio anterior, pero con diferentes unidades. Es crucial convertirlas a una unidad común antes de calcular.</p>
+            <div class="formula">
+                Denominador de la Escala = Distancia Real / Distancia en el Mapa
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Convertir ambas distancias a la misma unidad (milímetros)</h3>
+                <p>Convertimos la distancia real de metros a milímetros para que coincida con la del mapa.</p>
+                <p><span class="math-expr">Distancia Real (mm) = 345 m &times; 1,000 mm/m = 345,000 mm</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular el denominador de la escala</h3>
+                <p>Dividimos la distancia real por la distancia en el mapa:</p>
+                <p><span class="math-expr">Denominador de la Escala = 345,000 mm / 46 mm = 7,500</span></p>
+            </div>
+            <div class="resultado">
+                La escala del mapa es <strong>1:7,500</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio5" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 5: Calcular Superficie Real</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> ¿Qué superficie real tiene una parcela cuya superficie en un mapa a escala 1/30.000 es 13 cm²?
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para calcular la superficie real a partir de la superficie en un mapa, se utiliza la relación cuadrática de la escala.</p>
+            <div class="formula">
+                Superficie Real = Superficie en el Mapa &times; (Denominador de la Escala)²
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Aplicar la fórmula de superficie</h3>
+                <p>Sustituimos los valores conocidos:</p>
+                <ul>
+                    <li><strong>Superficie en el Mapa:</strong> 13 cm²</li>
+                    <li><strong>Denominador de la Escala:</strong> 30,000</li>
+                </ul>
+                <p><span class="math-expr">Superficie Real (cm²) = 13 cm² &times; (30,000)² = 13 &times; 900,000,000 = 11,700,000,000 cm²</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Convertir la superficie real a una unidad más práctica (hectáreas)</h3>
+                <p>Sabiendo que 1 hectárea (ha) equivale a 10,000 m² y 1 m² son 10,000 cm², entonces 1 ha = 100,000,000 cm².</p>
+                <p>O, de forma más sencilla:</p>
+                <p>1. Convertir cm² a m²: <span class="math-expr">11,700,000,000 cm² / 10,000 cm²/m² = 1,170,000 m²</span></p>
+                <p>2. Convertir m² a hectáreas: <span class="math-expr">1,170,000 m² / 10,000 m²/ha = 117 ha</span></p>
+            </div>
+            <div class="resultado">
+                La superficie real de la parcela es de <strong>117 hectáreas</strong>.
+            </div>
+        </div>
+
+        <div id="ejercicio6" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 6: Deducir la Escala a partir de Superficies</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> En un mapa aparece una finca de 25 ha representada por 4 cm². Deducir la escala.
+            </div>
+            <h3>Procedimiento de Resolución:</h3>
+            <p>Para deducir la escala a partir de superficies, necesitamos la relación cuadrática de la escala entre la superficie real y la superficie en el mapa.</p>
+            <div class="formula">
+                Denominador de la Escala (e) = &radic;(Superficie Real / Superficie en el Mapa)
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Convertir la superficie real a la misma unidad que el mapa (cm²)</h3>
+                <p>Sabiendo que 1 hectárea (ha) equivale a 10,000 m² y 1 m² a 10,000 cm²:</p>
+                <ul>
+                    <li>1 ha = 10,000 m²</li>
+                    <li>1 ha = 10,000 &times; 10,000 cm² = 100,000,000 cm²</li>
+                </ul>
+                <p><span class="math-expr">Superficie Real (cm²) = 25 ha &times; 100,000,000 cm²/ha = 2,500,000,000 cm²</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular el cuadrado del denominador de la escala (e²)</h3>
+                <p>Ahora dividimos la superficie real por la superficie en el mapa:</p>
+                <ul>
+                    <li><strong>Superficie en el Mapa:</strong> 4 cm²</li>
+                    <li><strong>Superficie Real:</strong> 2,500,000,000 cm²</li>
+                </ul>
+                <p><span class="math-expr">e² = 2,500,000,000 cm² / 4 cm² = 625,000,000</span></p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Calcular el denominador de la escala (e)</h3>
+                <p>Para obtener el denominador de la escala lineal, calculamos la raíz cuadrada de e²:</p>
+                <p><span class="math-expr">e = &radic;625,000,000 = 25,000</span></p>
+            </div>
+            <div class="resultado">
+                La escala del mapa es <strong>1:25,000</strong>.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("ejercicio-links");
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+        }
+
+        function mostrarEjercicio(id) {
+            // Hide all exercise content
+            var contenidos = document.getElementsByClassName('ejercicio-contenido');
+            for (var i = 0; i < contenidos.length; i++) {
+                contenidos[i].style.display = 'none';
+            }
+
+            // Show the selected one
+            document.getElementById(id).style.display = 'block';
+
+            // Update active link in navbar
+            var links = document.querySelectorAll('.ejercicio-links-container a');
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            
+            // Find the link that corresponds to the id and set it to active
+            var activeLink = document.querySelector('.ejercicio-links-container a[onclick*="' + id + '"]');
+            if(activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Close the menu after an option is clicked
+            var x = document.getElementById("ejercicio-links");
+            if (x.style.display === "flex") { // Only close if it's open
+                x.style.display = "none";
+            }
+        }
+
+        // Show the first exercise by default on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarEjercicio('ejercicio1');
+        });
+    </script>
+
+</body>
+</html>
