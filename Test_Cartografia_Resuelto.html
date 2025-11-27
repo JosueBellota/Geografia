@@ -13,6 +13,8 @@
         }
         .question-block {
             margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #eee;
         }
         .question-title {
             font-weight: bold;
@@ -45,6 +47,14 @@
             margin-right: 8px;
             font-weight: bold;
         }
+        .justification {
+            margin-top: 1em;
+            padding: 10px;
+            background-color: #e9f7ef;
+            border-left: 4px solid #28a745;
+            font-size: 0.9em;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +69,9 @@
             <li><span class="answer-label">c)</span> El estudio de los climas y su distribución.</li>
             <li><span class="answer-label">d)</span> La disciplina que mide la distancia entre estrellas.</li>
         </ul>
+        <div class="justification">
+            Es la definición fundamental de la disciplina, que abarca tanto la técnica (ciencia) como la estética (arte) de crear mapas.
+        </div>
     </div>
 
     <div class="question-block">
@@ -69,6 +82,9 @@
             <li><span class="answer-label">c)</span> Los mapas temáticos no tienen escala.</li>
             <li><span class="answer-label">d)</span> Los mapas topográficos son siempre a escala pequeña.</li>
         </ul>
+        <div class="justification">
+            El mapa topográfico sirve como base de propósito general (mostrando relieve, ríos, ciudades), mientras que el temático usa esa base para destacar un tema concreto (clima, población, geología).
+        </div>
     </div>
 
     <div class="question-block">
@@ -79,6 +95,9 @@
             <li><span class="correct-answer">c</span> La superficie teórica definida por el nivel medio de los mares, que representa la forma real de la Tierra.</li>
             <li><span class="answer-label">d)</span> Un tipo de proyección cartográfica para zonas polares.</li>
         </ul>
+        <div class="justification">
+            El Geoide es un modelo físico que representa la superficie equipotencial del campo de gravedad terrestre. Es la forma "verdadera" pero irregular de la Tierra, no una figura matemática simple.
+        </div>
     </div>
 
     <div class="question-block">
@@ -89,6 +108,9 @@
             <li><span class="correct-answer">c</span> Porque el Elipsoide es una superficie matemática simple que se ajusta bien al Geoide y permite cálculos precisos.</li>
             <li><span class="answer-label">d)</span> Porque el Elipsoide es la única superficie que no produce deformaciones.</li>
         </ul>
+        <div class="justification">
+            La complejidad matemática del Geoide lo hace inviable para los cálculos de proyecciones. El Elipsoide es la figura geométrica simple (esfera achatada) que mejor se aproxima al Geoide y sobre la cual se pueden realizar los cálculos geodésicos.
+        </div>
     </div>
 
     <div class="question-block">
@@ -99,6 +121,9 @@
             <li><span class="answer-label">c)</span> La distancia que hay entre dos curvas de nivel.</li>
             <li><span class="answer-label">d)</span> El nombre oficial de un mapa.</li>
         </ul>
+        <div class="justification">
+            Un datum es el "puente" entre el modelo matemático (elipsoide) y el mundo real. Define la posición y orientación de un elipsoide específico respecto a la Tierra, sirviendo de marco de referencia para todas las coordenadas.
+        </div>
     </div>
 
     <div class="question-block">
@@ -109,6 +134,9 @@
             <li><span class="answer-label">c)</span> La imposibilidad de representar los polos.</li>
             <li><span class="answer-label">d)</span> La necesidad de usar siempre coordenadas en metros.</li>
         </ul>
+        <div class="justification">
+            Es matemáticamente imposible aplanar una superficie esférica sobre un plano sin estirar o encoger alguna de sus propiedades. Por tanto, toda proyección sacrifica la exactitud de ángulos, áreas o distancias.
+        </div>
     </div>
 
     <div class="question-block">
@@ -119,6 +147,9 @@
             <li><span class="correct-answer">c</span> Conforme.</li>
             <li><span class="answer-label">d)</span> Azimutal.</li>
         </ul>
+        <div class="justification">
+            La propiedad de "conformidad" garantiza que los ángulos medidos en el mapa son los mismos que en la superficie terrestre. Esto hace que las formas de objetos pequeños se conserven, siendo ideal para la navegación.
+        </div>
     </div>
 
     <div class="question-block">
@@ -129,6 +160,9 @@
             <li><span class="answer-label">c)</span> Estereográfica.</li>
             <li><span class="answer-label">d)</span> Ortográfica.</li>
         </ul>
+        <div class="justification">
+            La propiedad de "equivalencia" garantiza que las áreas medidas en el mapa son proporcionales a sus áreas reales en la Tierra. Es crucial para mapas temáticos donde la comparación de superficies es importante (ej. deforestación, densidad de población).
+        </div>
     </div>
 
     <div class="question-block">
@@ -139,6 +173,9 @@
             <li><span class="correct-answer">c</span> Transversal, siendo tangente a un meridiano.</li>
             <li><span class="answer-label">d)</span> Secante a los dos polos al mismo tiempo.</li>
         </ul>
+        <div class="justification">
+            A diferencia de la Mercator normal (cilindro tangente al Ecuador), la UTM usa un cilindro "acostado" (transverso) que es tangente a un meridiano. Esto minimiza la distorsión en una franja estrecha alrededor de ese meridiano (el huso).
+        </div>
     </div>
 
     <div class="question-block">
@@ -149,6 +186,9 @@
             <li><span class="answer-label">c)</span> Kilómetros al norte y al este del huso.</li>
             <li><span class="answer-label">d)</span> Píxeles y vectores.</li>
         </ul>
+        <div class="justification">
+            Las coordenadas geográficas son un sistema de referencia angular, no lineal. Definen una posición en la superficie curva del elipsoide mediante dos ángulos: latitud y longitud.
+        </div>
     </div>
 
     <div class="question-block">
@@ -159,6 +199,9 @@
             <li><span class="answer-label">c)</span> No es válido para representar España.</li>
             <li><span class="answer-label">d)</span> Utiliza un único origen para todo el planeta.</li>
         </ul>
+        <div class="justification">
+            UTM es un sistema de coordenadas proyectadas, lo que significa que transforma las coordenadas angulares (geográficas) en un sistema plano cartesiano (X, Y) medido en metros.
+        </div>
     </div>
 
     <div class="question-block">
@@ -169,6 +212,9 @@
             <li><span class="answer-label">c)</span> 180 husos de 2 grados cada uno.</li>
             <li><span class="answer-label">d)</span> 24 husos horarios.</li>
         </ul>
+        <div class="justification">
+            La Tierra (360º) se divide en 60 zonas (husos) de 6º de longitud cada una (60 * 6 = 360). Cada huso tiene su propio sistema de coordenadas para minimizar la deformación.
+        </div>
     </div>
 
     <div class="question-block">
@@ -179,6 +225,9 @@
             <li><span class="correct-answer">c</span> La distancia en metros respecto al meridiano central del huso (con un falso Este).</li>
             <li><span class="answer-label">d)</span> La altitud del punto sobre el nivel del mar.</li>
         </ul>
+        <div class="justification">
+            La coordenada X (Easting) mide la distancia Este-Oeste hasta el meridiano central del huso en el que se encuentra el punto. La coordenada Y (Northing) mide la distancia al Ecuador.
+        </div>
     </div>
 
     <div class="question-block">
@@ -189,6 +238,9 @@
             <li><span class="correct-answer">c</span> Igual altitud.</li>
             <li><span class="answer-label">d)</span> Igual presión atmosférica.</li>
         </ul>
+        <div class="justification">
+            "Isohipsa" significa "igual altura" (del griego 'isos' igual y 'hypsos' altura). Es el método estándar para representar la tercera dimensión (altitud) en un mapa plano.
+        </div>
     </div>
 
     <div class="question-block">
@@ -199,6 +251,9 @@
             <li><span class="correct-answer">c</span> Una pendiente muy fuerte.</li>
             <li><span class="answer-label">d)</span> Una altitud negativa.</li>
         </ul>
+        <div class="justification">
+            La separación de las curvas indica cómo cambia la altitud en una distancia horizontal. Si están juntas, la altitud cambia rápidamente en poca distancia, lo que define una pendiente pronunciada.
+        </div>
     </div>
 
     <div class="question-block">
@@ -209,6 +264,9 @@
             <li><span class="answer-label">c)</span> La distancia real que representa un centímetro en el mapa.</li>
             <li><span class="answer-label">d)</span> La distancia desde el centro del mapa a sus bordes.</li>
         </ul>
+        <div class="justification">
+            La equidistancia es un valor fijo para un mapa determinado (ej. 20 metros) que indica cuánto se "sube" o "baja" al pasar de una curva de nivel a la siguiente.
+        </div>
     </div>
 
     <div class="question-block">
@@ -219,6 +277,9 @@
             <li><span class="correct-answer">c</span> ETRS89.</li>
             <li><span class="answer-label">d)</span> WGS72.</li>
         </ul>
+        <div class="justification">
+            ETRS89 (European Terrestrial Reference System 1989) es el sistema de referencia oficial para Europa, y por tanto para España. Es un sistema geocéntrico y compatible con WGS84, el sistema que usa el GPS.
+        </div>
     </div>
 
     <div class="question-block">
@@ -229,6 +290,9 @@
             <li><span class="answer-label">c)</span> El mundo entero en un solo mapa.</li>
             <li><span class="correct-answer">d</span> Zonas de latitudes medias.</li>
         </ul>
+        <div class="justification">
+            La forma de un cono se adapta bien a la curvatura de la Tierra en latitudes medias (ni ecuatoriales ni polares). La distorsión es mínima a lo largo del paralelo donde el cono toca o corta la superficie terrestre.
+        </div>
     </div>
 
     <div class="question-block">
@@ -239,6 +303,9 @@
             <li><span class="answer-label">c)</span> El Ecuador.</li>
             <li><span class="answer-label">d)</span> El meridiano 180°.</li>
         </ul>
+        <div class="justification">
+            Por convención internacional, el meridiano que pasa por el Real Observatorio de Greenwich (Londres) se define como el meridiano 0º, el origen para medir la longitud Este y Oeste.
+        </div>
     </div>
 
     <div class="question-block">
@@ -249,6 +316,142 @@
             <li><span class="correct-answer">c</span> La distancia angular (en grados) respecto al plano del ecuador.</li>
             <li><span class="answer-label">d)</span> El huso horario en el que se encuentra.</li>
         </ul>
+        <div class="justification">
+            La latitud es la coordenada geográfica que mide el ángulo entre el plano ecuatorial y la línea que une el centro de la Tierra con un punto de su superficie. Varía de 0º en el Ecuador a 90º en los Polos.
+        </div>
+    </div>
+
+    <hr>
+    <h2>Ampliación del Test para Estudio</h2>
+
+    <div class="question-block">
+        <p class="question-title">21. El datum europeo ED50, muy utilizado en la cartografía española del siglo XX, está basado en:</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Un elipsoide centrado en el centro de masas de la Tierra.</li>
+            <li><span class="answer-label">b)</span> El meridiano de Greenwich como único punto de referencia.</li>
+            <li><span class="correct-answer">c</span> El Elipsoide Internacional de Hayford, con un punto de tangencia en Potsdam (Alemania).</li>
+            <li><span class="answer-label">d)</span> Un sistema de satélites GPS.</li>
+        </ul>
+        <div class="justification">
+            ED50 (European Datum 1950) es un datum clásico, no geocéntrico. Se definió ajustando el Elipsoide de Hayford a la superficie de Europa, utilizando como punto fundamental la torre de Helmert en Potsdam. Por eso, las coordenadas cambian al pasar a sistemas modernos como ETRS89.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">22. ¿Cuál es la principal ventaja del sistema de referencia ETRS89 (o su equivalente WGS84) sobre ED50?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Utiliza un elipsoide más achatado y preciso para representar España.</li>
+            <li><span class="correct-answer">b</span> Es un sistema geocéntrico, lo que lo hace compatible directamente con los sistemas de navegación global (GPS, Galileo).</li>
+            <li><span class="answer-label">c)</span> No produce ninguna deformación en las proyecciones.</li>
+            <li><span class="answer-label">d)</span> Sus coordenadas se miden en grados y no en metros.</li>
+        </ul>
+        <div class="justification">
+            La gran ventaja de ETRS89/WGS84 es que su origen está en el centro de masas de la Tierra (es geocéntrico), lo que permite que los sistemas de posicionamiento por satélite (GPS) funcionen globalmente con un único marco de referencia coherente.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">23. En el sistema de coordenadas UTM, ¿cuál es el propósito de aplicar un "Falso Este" de 500,000 metros?</p>
+        <ul>
+            <li><span class="correct-answer">a</span> Para que la coordenada X siempre sea positiva dentro del huso.</li>
+            <li><span class="answer-label">b)</span> Para corregir la deformación de la proyección en el ecuador.</li>
+            <li><span class="answer-label">c)</span> Para hacer que el meridiano central del huso coincida con el meridiano de Greenwich.</li>
+            <li><span class="answer-label">d)</span> Para que las coordenadas X e Y siempre tengan el mismo número de dígitos.</li>
+        </ul>
+        <div class="justification">
+            Al meridiano central de cada huso UTM se le asigna un valor arbitrario de 500,000 mE (metros Este). Como el huso tiene 6º de ancho, este valor asegura que cualquier punto al oeste del meridiano central siga teniendo una coordenada X positiva, evitando así el uso de números negativos.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">24. Las proyecciones acimutales (o planas) son más adecuadas y presentan menos deformación cuando se usan para representar:</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Zonas de latitudes medias, como Europa.</li>
+            <li><span class="answer-label">b)</span> Zonas ecuatoriales y tropicales.</li>
+            <li><span class="correct-answer">c</span> Las regiones polares.</li>
+            <li><span class="answer-label">d)</span> Mapas del mundo completos (planisferios).</li>
+        </ul>
+        <div class="justification">
+            En una proyección acimutal, la superficie de proyección es un plano tangente a un punto. La deformación es mínima cerca de ese punto de tangencia y aumenta radialmente hacia afuera. Por ello, son ideales para las zonas polares, donde el plano se hace tangente al polo.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">25. En cartografía, ¿qué significa que un mapa tiene una "escala grande"?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Que representa una gran extensión de terreno (ej. un continente).</li>
+            <li><span class="answer-label">b)</span> Que el número del denominador de la escala es muy grande (ej. 1:5,000,000).</li>
+            <li><span class="correct-answer">c</span> Que representa una pequeña porción de terreno con mucho detalle (ej. un municipio).</li>
+            <li><span class="answer-label">d)</span> Que el mapa es físicamente de gran tamaño.</li>
+        </ul>
+        <div class="justification">
+            "Escala grande" se refiere a que la fracción es mayor (1/2.000 es mayor que 1/1.000.000). Por tanto, una escala grande como 1:2.000 muestra mucho detalle de un área pequeña. Una "escala pequeña" (ej. 1:1,000,000) muestra poco detalle de un área grande.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">26. ¿Cuál es la función principal de la leyenda en un mapa?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Indicar el norte geográfico.</li>
+            <li><span class="correct-answer">b</span> Explicar el significado de los símbolos, tramas y colores utilizados en el mapa.</li>
+            <li><span class="answer-label">c)</span> Mostrar la escala gráfica y numérica.</li>
+            <li><span class="answer-label">d)</span> Informar sobre el autor y el año de publicación del mapa.</li>
+        </ul>
+        <div class="justification">
+            El mapa utiliza un lenguaje visual (símbolos, colores). La leyenda es el "diccionario" que traduce ese lenguaje, explicando qué representa cada elemento para que el lector pueda interpretar la información del mapa correctamente.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">27. En una proyección cilíndrica directa, como la de Mercator, ¿qué forma adoptan los meridianos y los paralelos?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Los meridianos son arcos y los paralelos son círculos concéntricos.</li>
+            <li><span class="correct-answer">b</span> Los meridianos y los paralelos son líneas rectas que se cortan en ángulo recto.</li>
+            <li><span class="answer-label">c)</span> Los meridianos son líneas rectas convergentes y los paralelos son arcos de círculo.</li>
+            <li><span class="answer-label">d)</span> Los meridianos y los paralelos son curvas complejas.</li>
+        </ul>
+        <div class="justification">
+            Al "desenrollar" el cilindro sobre el que se proyecta la Tierra, tanto los meridianos (líneas de longitud) como los paralelos (líneas de latitud) se convierten en líneas rectas que forman una cuadrícula o rejilla perfectamente perpendicular.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">28. Si al cambiar de un mapa a otro, las coordenadas de una ciudad cambian de valores, pero su forma y la de los edificios cercanos se ve prácticamente idéntica, es probable que ambos mapas usen:</p>
+        <ul>
+            <li><span class="answer-label">a)</span> El mismo datum pero una proyección distinta.</li>
+            <li><span class="answer-label">b)</span> Proyecciones no conformes.</li>
+            <li><span class="correct-answer">c</span> Proyecciones conformes, aunque el datum o la proyección puedan ser diferentes.</li>
+            <li><span class="answer-label">d)</span> La misma escala exacta.</li>
+        </ul>
+        <div class="justification">
+            Una proyección conforme es aquella que conserva los ángulos y, por tanto, las formas locales (aunque puede distorsionar las áreas). Si la forma se mantiene, es la característica clave de una proyección conforme, como la UTM o la de Mercator.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">29. ¿Qué le ocurre a la red de drenaje (ríos) en una zona montañosa representada con curvas de nivel?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> Los ríos siempre fluyen paralelos a las curvas de nivel.</li>
+            <li><span class="correct-answer">b</span> Los ríos cortan las curvas de nivel de forma aproximadamente perpendicular.</li>
+            <li><span class="answer-label">c)</span> Los ríos solo aparecen en las zonas donde las curvas están más separadas.</li>
+            <li><span class="answer-label">d)</span> Los ríos nacen en las curvas de nivel de menor cota y fluyen hacia las de mayor cota.</li>
+        </ul>
+        <div class="justification">
+            El agua fluye por la línea de máxima pendiente. En un mapa topográfico, la línea de máxima pendiente es siempre perpendicular a las curvas de nivel. Por lo tanto, los ríos (vaguadas) cruzan estas curvas formando ángulos cercanos a 90 grados.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">30. ¿Qué es la "longitud" de un punto?</p>
+        <ul>
+            <li><span class="answer-label">a)</span> La distancia en kilómetros desde el punto hasta el Ecuador.</li>
+            <li><span class="correct-answer">b</span> La distancia angular medida sobre el ecuador desde el meridiano de Greenwich hasta el meridiano del punto.</li>
+            <li><span class="answer-label">c)</span> La altura del punto sobre el nivel del mar.</li>
+            <li><span class="answer-label">d)</span> El ángulo que forma con el Polo Norte.</li>
+        </ul>
+        <div class="justification">
+            La longitud es la coordenada geográfica que mide la distancia angular (en grados) hacia el Este o el Oeste desde el meridiano de referencia o meridiano 0º, que por convención es el de Greenwich.
+        </div>
     </div>
 
 </body>

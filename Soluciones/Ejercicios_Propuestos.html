@@ -150,6 +150,31 @@
             padding: 2px 4px;
             border-radius: 4px;
         }
+        .formulas-previas {
+            background-color: #f0f8ff; /* AliceBlue */
+            border: 1px solid #b0c4de; /* LightSteelBlue */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .formulas-previas ol {
+            padding-left: 20px;
+        }
+        .formulas-previas li {
+            margin-bottom: 15px;
+        }
+        .formulas-previas p {
+            margin: 5px 0;
+        }
+        .formulas-previas .formula {
+            margin-top: 5px;
+            padding: 10px;
+        }
+        .formulas-previas small {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -904,6 +929,26 @@
                 <br>
                 <strong>SOLUCIÓN PROPORCIONADA:</strong> 741 m²
             </div>
+            <h3>Fórmulas y Conceptos a Utilizar:</h3>
+            <div class="formulas-previas">
+                <ol>
+                    <li>
+                        <strong>Normalización de Coordenadas (Opcional):</strong>
+                        <p>Para simplificar los cálculos, se restará un valor base a todas las coordenadas. Esto no afecta el cálculo del área.</p>
+                        <div class="formula">
+                            <code>X' = X - X_base</code><br>
+                            <code>Y' = Y - Y_base</code>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Fórmula del Área de Gauss (Fórmula de la lazada):</strong>
+                        <p>Se utiliza para calcular el área de un polígono simple a partir de las coordenadas de sus vértices.</p>
+                        <div class="formula">
+                            <code>Área = 0.5 × |(x₁y₂ + ... + xₙy₁) - (y₁x₂ + ... + yₙx₁)|</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
             <h3>Procedimiento de Resolución:</h3>
             <p>Para calcular el área de un polígono dadas sus coordenadas (UTM), utilizaremos la Fórmula del Área de Gauss, también conocida como la "Fórmula de la lazada". Para simplificar los cálculos con coordenadas grandes, podemos restar un valor constante a todas las coordenadas X e Y sin alterar el área resultante.</p>
             
@@ -969,6 +1014,38 @@
                 </ul>
                 <strong>SOLUCIÓN PROPORCIONADA:</strong> Distancia = 4,392.3 km; Acimut = 251.62°
             </div>
+            <h3>Fórmulas y Conceptos a Utilizar:</h3>
+            <div class="formulas-previas">
+                <ol>
+                    <li>
+                        <strong>Conversión a Radianes:</strong>
+                        <p>Las fórmulas trigonométricas requieren que los ángulos (latitud y longitud) estén en radianes.</p>
+                        <div class="formula">
+                            <code>ángulo_rad = ángulo_deg × (π / 180)</code>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Fórmula de Haversine (para Distancia):</strong>
+                        <p>Calcula la distancia de círculo máximo entre dos puntos en una esfera.</p>
+                        <div class="formula">
+                            <code>a = sin²(Δφ/2) + cos(φ₁)cos(φ₂)sin²(Δλ/2)</code><br>
+                            <code>Distancia = 2 × R × asin(√a)</code>
+                        </div>
+                        <small>Donde: φ es la latitud, λ es la longitud, Δ es la diferencia, y R es el radio de la Tierra (aprox. 6371 km).</small>
+                    </li>
+                    <li>
+                        <strong>Fórmula del Acimut:</strong>
+                        <p>Calcula el acimut inicial (rumbo) desde el punto A al punto B.</p>
+                        <div class="formula">
+                            <code>θ = atan2(y, x)</code>
+                        </div>
+                        <small>Donde:<br>
+                        <code>y = sin(Δλ) × cos(φ₂)</code><br>
+                        <code>x = cos(φ₁)sin(φ₂) - sin(φ₁)cos(φ₂)cos(Δλ)</code>
+                        </small>
+                    </li>
+                </ol>
+            </div>
             <h3>Procedimiento de Resolución:</h3>
             <p>Este problema requiere el uso de la trigonometría esférica para calcular la distancia del círculo máximo (la ruta más corta en la superficie de la Tierra) y el acimut inicial (la dirección del viaje).</p>
 
@@ -1033,6 +1110,38 @@
                     <li><strong>B:</strong> Longitud = 82.65° E, Latitud = 22.9667° S</li>
                 </ul>
                 <strong>SOLUCIÓN PROPORCIONADA:</strong> Distancia = 11,807.7 km; Acimut = 106.47°
+            </div>
+            <h3>Fórmulas y Conceptos a Utilizar:</h3>
+            <div class="formulas-previas">
+                <ol>
+                    <li>
+                        <strong>Conversión a Radianes:</strong>
+                        <p>Las fórmulas trigonométricas requieren que los ángulos (latitud y longitud) estén en radianes.</p>
+                        <div class="formula">
+                            <code>ángulo_rad = ángulo_deg × (π / 180)</code>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Fórmula de Haversine (para Distancia):</strong>
+                        <p>Calcula la distancia de círculo máximo entre dos puntos en una esfera.</p>
+                        <div class="formula">
+                            <code>a = sin²(Δφ/2) + cos(φ₁)cos(φ₂)sin²(Δλ/2)</code><br>
+                            <code>Distancia = 2 × R × asin(√a)</code>
+                        </div>
+                        <small>Donde: φ es la latitud, λ es la longitud, Δ es la diferencia, y R es el radio de la Tierra (aprox. 6371 km).</small>
+                    </li>
+                    <li>
+                        <strong>Fórmula del Acimut:</strong>
+                        <p>Calcula el acimut inicial (rumbo) desde el punto A al punto B.</p>
+                        <div class="formula">
+                            <code>θ = atan2(y, x)</code>
+                        </div>
+                        <small>Donde:<br>
+                        <code>y = sin(Δλ) × cos(φ₂)</code><br>
+                        <code>x = cos(φ₁)sin(φ₂) - sin(φ₁)cos(φ₂)cos(Δλ)</code>
+                        </small>
+                    </li>
+                </ol>
             </div>
             <h3>Procedimiento de Resolución:</h3>
             <p>Este ejercicio es similar al anterior, pero con la complejidad añadida de que los puntos se encuentran en hemisferios diferentes tanto en latitud como en longitud. Usaremos las mismas fórmulas de Haversine y de acimut.</p>
