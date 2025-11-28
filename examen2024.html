@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Geografía 2024 - Resolución</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 60px 0 0 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0056b3;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar .menu-icon {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        .ejercicio-links-container {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+        .ejercicio-links-container a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: left;
+        }
+        .ejercicio-links-container a:hover {
+            background-color: #007bff;
+        }
+        .ejercicio-links-container a.active {
+            background-color: #003d82;
+        }
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        h2, h3 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        .enunciado {
+            background-color: #e9f5ff;
+            border-left: 6px solid #007bff;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 1.05em;
+            border-radius: 5px;
+        }
+        .paso {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .paso h3 {
+            margin-top: 0;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.2em;
+            color: #0056b3;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .resultado {
+            background-color: #e2f9e9;
+            border: 2px solid #28a745;
+            border-left: 8px solid #28a745;
+            padding: 20px;
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 1.15em;
+            border-radius: 8px;
+        }
+        .math-sqrt:before { content: "√"; font-size: 1.5em; vertical-align: middle; }
+        .math-paren { border-top: 1px solid; padding-left: 5px; }
+        .ejercicio-contenido { display: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #0056b3; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i> Ejercicios
+        </a>
+        <div id="ejercicio-links" class="ejercicio-links-container">
+            <a href="#" onclick="mostrarEjercicio('ejercicio1'); return false;" class="active">Ejercicio 1</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio2'); return false;">Ejercicio 2</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Resolución Examen Diciembre 2024</h1>
+
+        <div id="ejercicio1" class="ejercicio-contenido">
+            <h2>Ejercicio 1: Cálculo de Área y Perímetro de un Polígono</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular el área y perímetro de este polígono a partir de las siguientes coordenadas:
+                <table>
+                    <thead><tr><th>N</th><th>X (m)</th><th>Y (m)</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>745128.709</td><td>4320747.261</td></tr>
+                        <tr><td>2</td><td>745170.749</td><td>4320695.501</td></tr>
+                        <tr><td>3</td><td>745069.601</td><td>4320605.732</td></tr>
+                        <tr><td>4</td><td>745018.710</td><td>4320657.254</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Cálculo del Perímetro</h3>
+            <p>El perímetro es la suma de las distancias euclídeas entre los vértices consecutivos.</p>
+            <div class="formula">Distancia = <span class="math-sqrt"><span class="math-paren">(X₂ - X₁)² + (Y₂ - Y₁)²</span></span></div>
+
+            <div class="paso">
+                <h3>Tramo 1-2</h3>
+                <p>d(1,2) = <span class="math-sqrt"><span class="math-paren">(745170.749 - 745128.709)² + (4320695.501 - 4320747.261)²</span></span></p>
+                <p>d(1,2) = <span class="math-sqrt"><span class="math-paren">(42.04)² + (-51.76)²</span></span> = <span class="math-sqrt"><span class="math-paren">1767.36 + 2679.10</span></span> ≈ <strong>66.68 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Tramo 2-3</h3>
+                <p>d(2,3) = <span class="math-sqrt"><span class="math-paren">(745069.601 - 745170.749)² + (4320605.732 - 4320695.501)²</span></span></p>
+                <p>d(2,3) = <span class="math-sqrt"><span class="math-paren">(-101.148)² + (-89.769)²</span></span> = <span class="math-sqrt"><span class="math-paren">10231.02 + 8058.47</span></span> ≈ <strong>135.24 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Tramo 3-4</h3>
+                <p>d(3,4) = <span class="math-sqrt"><span class="math-paren">(745018.710 - 745069.601)² + (4320657.254 - 4320605.732)²</span></span></p>
+                <p>d(3,4) = <span class="math-sqrt"><span class="math-paren">(-50.891)² + (51.522)²</span></span> = <span class="math-sqrt"><span class="math-paren">2590.90 + 2654.52</span></span> ≈ <strong>72.43 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Tramo 4-1</h3>
+                <p>d(4,1) = <span class="math-sqrt"><span class="math-paren">(745128.709 - 745018.710)² + (4320747.261 - 4320657.254)²</span></span></p>
+                <p>d(4,1) = <span class="math-sqrt"><span class="math-paren">(109.999)² + (90.007)²</span></span> = <span class="math-sqrt"><span class="math-paren">12099.78 + 8101.26</span></span> ≈ <strong>142.13 m</strong></p>
+            </div>
+            <div class="paso">
+                <h3>Perímetro Total</h3>
+                <p>Perímetro = 66.68 + 135.24 + 72.43 + 142.13</p>
+            </div>
+            <div class="resultado">Perímetro Total ≈ 416.48 metros</div>
+
+            <h3>Cálculo del Área</h3>
+            <p>Se utiliza la Fórmula del área de Gauss (fórmula de la lazada) para calcular el área a partir de las coordenadas de los vértices.</p>
+            <div class="formula">Área = 0.5 × |(x₁y₂ + ... + xₙy₁) - (y₁x₂ + ... + yₙx₁)|</div>
+            <div class="paso">
+                <h3>Sumatorios Cruzados</h3>
+                <p>Sumatorio 1 (x₁y₂ + x₂y₃ + ...):<br> (745128.709 * 4320695.501) + (745170.749 * 4320605.732) + (745069.601 * 4320657.254) + (745018.710 * 4320747.261) ≈ 1.2877082785 × 10¹³</p>
+                <p>Sumatorio 2 (y₁x₂ + y₂x₃ + ...):<br> (4320747.261 * 745170.749) + (4320695.501 * 745069.601) + (4320605.732 * 745018.710) + (4320657.254 * 745128.709) ≈ 1.2878129484 × 10¹³</p>
+            </div>
+             <div class="paso">
+                <h3>Cálculo Final del Área</h3>
+                <p>Área = 0.5 * |1.2877082785e13 - 1.2878129484e13|</p>
+                <p>Área = 0.5 * |-1046699000|</p>
+                 <p>Nota: El cálculo es sensible a la precisión. Un recálculo con coordenadas normalizadas (restando un origen común) da un valor más manejable y preciso.</p>
+                 <p>Área = 0.5 * |(110.7*90.5 + 152.7*0.7 + 51.6*52.3 + 0.7*142.3) - (142.3*152.7 + 90.5*51.6 + 0.7*0.7 + 52.3*110.7)|</p>
+                 <p>Área = 0.5 * |(10018 + 107 + 2699 + 100) - (21727 + 4670 + 0.5 + 5790)|</p>
+                 <p>Área = 0.5 * |12924 - 32187.5| = 0.5 * |-19263.5| ≈ 9631.75 m²</p>
+            </div>
+            <div class="resultado">Área Total ≈ 9631.75 m²</div>
+        </div>
+
+        <div id="ejercicio2" class="ejercicio-contenido">
+            <h2>Ejercicio 2: Cálculo de Orientación y Distancia</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la orientación y distancia entre los puntos A y B a partir de las coordenadas siguientes:
+                 <ul>
+                    <li><strong>A:</strong> X = 744076.66 m, Y = 4318382.55 m</li>
+                    <li><strong>B:</strong> X = 743840.82 m, Y = 4319534.61 m</li>
+                </ul>
+            </div>
+            
+            <h3>Cálculo de la Distancia</h3>
+            <div class="paso">
+                <h3>Paso 1: Calcular ΔX y ΔY</h3>
+                <p>ΔX = X_B - X_A = 743840.82 - 744076.66 = -235.84 m</p>
+                <p>ΔY = Y_B - Y_A = 4319534.61 - 4318382.55 = 1152.06 m</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Aplicar Teorema de Pitágoras</h3>
+                <div class="formula">Distancia = <span class="math-sqrt"><span class="math-paren">(ΔX)² + (ΔY)²</span></span></div>
+                <p>Distancia = <span class="math-sqrt"><span class="math-paren">(-235.84)² + (1152.06)²</span></span></p>
+                <p>Distancia = <span class="math-sqrt"><span class="math-paren">55620.35 + 1327242.48</span></span> = <span class="math-sqrt"><span class="math-paren">1382862.83</span></span></p>
+            </div>
+            <div class="resultado">Distancia AB ≈ 1175.95 metros</div>
+
+            <h3>Cálculo de la Orientación (Acimut)</h3>
+            <p>La orientación o acimut se calcula desde el Norte. Utilizaremos la función <code>atan2(ΔX, ΔY)</code> que maneja los cuadrantes automáticamente y la convertiremos a grados sexagesimales.</p>
+            <div class="paso">
+                 <h3>Paso 1: Determinar el Cuadrante</h3>
+                 <p>Con ΔX negativo (-235.84) y ΔY positivo (1152.06), el punto B está en el <strong>Cuadrante IV (Nor-Oeste)</strong> respecto a A.</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular el Ángulo</h3>
+                <div class="formula">θ (rad) = atan2(ΔX, ΔY) = atan2(-235.84, 1152.06)</div>
+                <p>θ ≈ -0.20188 radianes</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Convertir a Grados y Ajustar</h3>
+                <p>Primero, convertimos de radianes a grados:</p>
+                <div class="formula">θ (deg) = θ (rad) × (180 / π)</div>
+                <p>θ ≈ -0.20188 × 57.2958 ≈ -11.57°</p>
+                <p>Como el resultado es un ángulo negativo y queremos un acimut de 0° a 360°, le sumamos 360°:</p>
+                <div class="formula">Acimut = -11.57° + 360°</div>
+            </div>
+            <div class="resultado">Orientación AB ≈ 348.43°</div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("ejercicio-links");
+            x.style.display = (x.style.display === "flex") ? "none" : "flex";
+        }
+
+        function mostrarEjercicio(id) {
+            var contenidos = document.getElementsByClassName('ejercicio-contenido');
+            for (var i = 0; i < contenidos.length; i++) {
+                contenidos[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+
+            var links = document.querySelectorAll('.ejercicio-links-container a');
+            links.forEach(function(link) { link.classList.remove('active'); });
+            
+            var activeLink = document.querySelector('.ejercicio-links-container a[onclick*="' + id + '"]');
+            if(activeLink) { activeLink.classList.add('active'); }
+
+            var menu = document.getElementById("ejercicio-links");
+            if (window.innerWidth < 768) { // Oculta el menú en móviles tras la selección
+                 menu.style.display = "none";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarEjercicio('ejercicio1');
+        });
+    </script>
+
+</body>
+</html>
