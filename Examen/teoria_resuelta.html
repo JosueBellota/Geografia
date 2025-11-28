@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Resuelto de Teoría - Examen 2024</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 2em;
+        }
+        .question-block {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #eee;
+        }
+        .question-title {
+            font-weight: bold;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .correct-answer {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #28a745;
+            border-radius: 50%;
+            font-weight: bold;
+            color: #28a745;
+            margin-right: 8px;
+        }
+        .answer-label {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .justification {
+            margin-top: 1em;
+            padding: 10px;
+            background-color: #e9f7ef;
+            border-left: 4px solid #28a745;
+            font-size: 0.9em;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Resolución Test de Teoría - Diciembre 2024</h1>
+
+    <div class="question-block">
+        <p class="question-title">1. La tolerancia de un plano es:</p>
+        <ul>
+            <li><span class="answer-label">•</span> La división entre la distancia medida en el terreno y en el plano.</li>
+            <li><span class="answer-label">•</span> La escala de un mapa.</li>
+            <li><span class="correct-answer">•</span> El límite de la percepción visual multiplicado por el denominador de la escala.</li>
+            <li><span class="answer-label">•</span> Todas las otras respuestas son correctas.</li>
+        </ul>
+        <div class="justification">
+            La tolerancia en un plano cartográfico se define como el error máximo admisible. Comúnmente, se establece a partir del límite de la percepción visual humana (aproximadamente 0.2 mm), multiplicado por el denominador de la escala del mapa. Por ejemplo, en un mapa 1:50.000, la tolerancia sería 0.2 mm * 50.000 = 10.000 mm = 10 metros.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">2. La proyección UTM:</p>
+        <ul>
+            <li><span class="correct-answer">•</span> Permite conservar los ángulos.</li>
+            <li><span class="answer-label">•</span> La coordenada X en el meridiano de Greenwich es 0.</li>
+            <li><span class="answer-label">•</span> El origen de la coordenada X es el ecuador.</li>
+            <li><span class="answer-label">•</span> Todas las otras respuestas son correctas.</li>
+        </ul>
+        <div class="justification">
+            La proyección Universal Transversa de Mercator (UTM) es una proyección conforme, lo que significa que su principal característica es la conservación de los ángulos y las formas locales. Las otras opciones son incorrectas: la coordenada X tiene un "falso Este" de 500.000m en el meridiano central de cada huso (no en Greenwich), y el origen de la coordenada Y (Norte) es el Ecuador.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">3. La ondulación del geoide es:</p>
+        <ul>
+            <li><span class="answer-label">•</span> La distancia de un punto de la superficie terrestre al geoide.</li>
+            <li><span class="answer-label">•</span> La distancia de un punto de la superficie terrestre al elipsoide.</li>
+            <li><span class="correct-answer">•</span> La diferencia entre la altura elipsoidal y la altura ortométrica.</li>
+            <li><span class="answer-label">•</span> La diferencia entre la coordenada X UTM y la longitud.</li>
+        </ul>
+        <div class="justification">
+            La ondulación geoidal (N) es la separación vertical que existe entre el geoide y el elipsoide de referencia. La altura de un punto sobre el elipsoide se llama altura elipsoidal (h), y la altura sobre el geoide (nivel medio del mar) es la altura ortométrica (H). La relación es: h = H + N. Por tanto, N = h - H.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">4. Un servicio WMS:</p>
+        <ul>
+            <li><span class="answer-label">•</span> Define operaciones Web de interface para la consulta y edición (descarga) de entidades geográficas vectoriales.</li>
+            <li><span class="answer-label">•</span> Servicio estándar del OGS que proporciona teselas.</li>
+            <li><span class="answer-label">•</span> Servicio que representa datos geoespaciales en un formato vectorial</li>
+            <li><span class="correct-answer">•</span> Genera imágenes de mapa de forma dinámica a partir de peticiones realizadas a un servidor.</li>
+        </ul>
+        <div class="justification">
+            Un Web Map Service (WMS) es un estándar de la Open Geospatial Consortium (OGC) que sirve para publicar mapas en forma de imágenes (generalmente PNG, GIF o JPG) a través de internet. No proporciona los datos vectoriales originales (eso sería un WFS) ni teselas (eso sería un WMTS), sino una representación visual de los datos.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">5. El PDOP en un sistema GNSS ofrece información sobre:</p>
+        <ul>
+            <li><span class="answer-label">•</span> El número de satélites disponibles en cada constelación GNSS.</li>
+            <li><span class="answer-label">•</span> La onda portadora que permite conocer la posición del usuario</li>
+            <li><span class="correct-answer">•</span> Precisión en la posición relacionada con la distribución de los satélites</li>
+            <li><span class="answer-label">•</span> Todas las otras respuestas son correctas.</li>
+        </ul>
+        <div class="justification">
+            PDOP (Position Dilution of Precision) es un factor que cuantifica cómo la geometría (distribución espacial) de los satélites visibles afecta a la precisión de una medición de posición GNSS. Un valor de PDOP bajo indica una buena distribución de satélites y, por tanto, una mayor precisión posicional.
+        </div>
+    </div>
+
+    <div class="question-block">
+        <p class="question-title">6. El servicio de posicionamiento RTK (NTRIP):</p>
+        <ul>
+            <li><span class="answer-label">•</span> Permite enviar correcciones de posición via radio al receptor móvil.</li>
+            <li><span class="answer-label">•</span> Se utiliza una constelación de satélites para enviar correcciones de los errores asociados a los sistemas GNSS.</li>
+            <li><span class="correct-answer">•</span> Se trata de correcciones en tiempo real transmitidas en formato RTCM a través de internet por redes de estaciones permanentes GNSS.</li>
+            <li><span class="answer-label">•</span> Todas las otras respuestas son correctas.</li>
+        </ul>
+        <div class="justification">
+            RTK (Real-Time Kinematic) sobre NTRIP (Networked Transport of RTCM via Internet Protocol) es una técnica de posicionamiento diferencial que utiliza correcciones de una red de estaciones de referencia permanentes. Estas correcciones se transmiten en formato estándar RTCM a través de internet para que un receptor móvil pueda alcanzar precisiones centimétricas en tiempo real.
+        </div>
+    </div>
+
+</body>
+</html>

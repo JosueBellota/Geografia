@@ -1240,7 +1240,16 @@
 
             <div class="paso">
                 <h3>Paso 3: Calcular el Acimut (AB)</h3>
-                <p>Aplicando la fórmula del acimut:</p>
+                <div class="formulas-previas" style="background-color: #e9f5ff; border-color: #007bff;">
+                    <h4 style="border:none; margin-top:0;">Regla de Decisión para el Acimut (con fórmula <code>arccos</code>)</h4>
+                    <p>El ángulo 'AB' que se obtiene de esta fórmula <code>arccos[...]</code> siempre está entre 0° y 180°. Para convertirlo en un acimut real (0°-360°), necesitamos saber si el destino (B) está al Este o al Oeste del origen (A). Esto lo determina el signo de <b>Δλ (λb - λa)</b>.</p>
+                    <ul style="padding-left: 20px;">
+                        <li>Si <b>Δλ es positivo (> 0)</b>, el destino está al <b>Este</b>. El acimut es el valor calculado directamente: <code>Acimut = AB</code>.</li>
+                        <li>Si <b>Δλ es negativo (< 0)</b>, el destino está al <b>Oeste</b>. El acimut se calcula restando el valor del círculo completo: <code>Acimut = 360° - AB</code>.</li>
+                    </ul>
+                    <small><i>Nota: Esta regla se aplica para viajes que se originan en el hemisferio Norte.</i></small>
+                </div>
+                <p>Primero, aplicamos la fórmula del acimut para obtener el ángulo base:</p>
                 <div class="formula">
                     <code>AB = arccos[(sin(20°) - sin(40°) * cos(39.54°)) / (cos(40°) * sin(39.54°))]</code><br>
                     <code>AB = arccos[(0.3420 - 0.6428 * 0.7711) / (0.7660 * 0.6366)]</code><br>
@@ -1248,8 +1257,9 @@
                     <code>AB = arccos[-0.1537 / 0.4876]</code><br>
                     <code>AB = arccos[-0.3152] ≈ 108.38°</code>
                 </div>
-                 <p>Dado que Δλ es negativo, el acimut real es 360° - AB:</p>
+                 <p>Como en este caso <b>Δλ es negativo (-40°)</b>, el destino está al Oeste, por lo que aplicamos la corrección:</p>
                 <div class="formula">
+                   <code>Acimut = 360° - AB</code><br>
                    <code>Acimut = 360° - 108.38° = 251.62°</code>
                 </div>
             </div>

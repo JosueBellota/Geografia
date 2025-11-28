@@ -127,6 +127,8 @@
         <div id="ejercicio-links" class="ejercicio-links-container">
             <a href="#" onclick="mostrarEjercicio('ejercicio1'); return false;" class="active">Ejercicio 1</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio2'); return false;">Ejercicio 2</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio3'); return false;">Ejercicio 3</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio4'); return false;">Ejercicio 4</a>
         </div>
     </div>
 
@@ -244,6 +246,131 @@
             <div class="resultado">Orientación AB ≈ 348.43°</div>
         </div>
 
+        <div id="ejercicio3" class="ejercicio-contenido">
+            <h2>Ejercicio 3: Cálculo de Pendiente Media y por Tramos</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la pendiente media y la de cada uno de los tramos de una ruta que pasa por los puntos A, B y C a partir de la siguiente información:
+                 <ul>
+                    <li>Coordenadas punto A (X, Y, Z): 720000 m, 4375000 m, 100 m</li>
+                    <li>Coordenadas punto B (X, Y, Z): 725000 m, 4377500 m, 150 m</li>
+                    <li>La distancia entre el punto B y C se ha medido en un mapa a escala 1:50000 siendo el valor 10 cm.</li>
+                    <li>La equidistancia de este mapa es 50 m y los puntos B y C están en curvas de nivel consecutivas.</li>
+                </ul>
+            </div>
+            
+            <h3>Cálculo Pendiente Tramo AB</h3>
+            <div class="paso">
+                <h3>Paso 1: Calcular Distancia Horizontal (Reducida) AB</h3>
+                <p>Dr_AB = <span class="math-sqrt"><span class="math-paren">(725000 - 720000)² + (4377500 - 4375000)²</span></span></p>
+                <p>Dr_AB = <span class="math-sqrt"><span class="math-paren">(5000)² + (2500)²</span></span> = <span class="math-sqrt"><span class="math-paren">31250000</span></span> ≈ 5590.17 m</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular Desnivel AB</h3>
+                <p>Desnivel_AB = Cota_B - Cota_A = 150 m - 100 m = 50 m</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Calcular Pendiente AB</h3>
+                <div class="formula">Pendiente (%) = (Desnivel / Distancia Reducida) × 100</div>
+                <p>Pendiente_AB = (50 / 5590.17) × 100</p>
+            </div>
+            <div class="resultado">Pendiente Tramo AB ≈ 0.894 %</div>
+
+            <h3>Cálculo Pendiente Tramo BC</h3>
+            <div class="paso">
+                <h3>Paso 1: Calcular Distancia Horizontal (Reducida) BC</h3>
+                <p>Se convierte la distancia del mapa a distancia real.</p>
+                <div class="formula">Dr_BC = Distancia Mapa × Denominador Escala</div>
+                <p>Dr_BC = 10 cm × 50000 = 500000 cm = 5000 m</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular Desnivel BC</h3>
+                <p>El desnivel es la equidistancia entre curvas de nivel consecutivas.</p>
+                <p>Desnivel_BC = 50 m</p>
+                 <small>(Asumimos que C es más alto que B. Si fuera descendente, el desnivel sería -50m y la pendiente negativa)</small>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Calcular Pendiente BC</h3>
+                <p>Pendiente_BC = (50 / 5000) × 100</p>
+            </div>
+            <div class="resultado">Pendiente Tramo BC = 1 %</div>
+
+            <h3>Cálculo de la Pendiente Media (Ruta A-B-C)</h3>
+             <div class="paso">
+                <h3>Paso 1: Calcular Desnivel Total y Distancia Total</h3>
+                <p>Desnivel Total = Desnivel_AB + Desnivel_BC = 50 m + 50 m = 100 m</p>
+                <p>Distancia Reducida Total = Dr_AB + Dr_BC = 5590.17 m + 5000 m = 10590.17 m</p>
+            </div>
+             <div class="paso">
+                <h3>Paso 2: Calcular Pendiente Media</h3>
+                <p>Pendiente Media = (Desnivel Total / Distancia Reducida Total) × 100</p>
+                <p>Pendiente Media = (100 / 10590.17) × 100</p>
+            </div>
+            <div class="resultado">Pendiente Media Ruta ABC ≈ 0.944 %</div>
+        </div>
+
+        <div id="ejercicio4" class="ejercicio-contenido">
+            <h2>Ejercicio 4: Cálculo de Orientación y Distancia Geográfica</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la orientación y distancia entre los puntos A y B a partir de las siguientes coordenadas:
+                 <ul>
+                    <li><b>A:</b> Longitud = 3,835941° E, Latitud = 40,00266° N</li>
+                    <li><b>B:</b> Longitud = 0,168864° W, Latitud = 39,00095° N</li>
+                </ul>
+                Se deben usar las fórmulas proporcionadas:
+                <div class="formula">d = arccos[(sin φa * sin φb) + (cos φa * cos φb * cos Δλ)]</div>
+                <div class="formula">AB = arccos[(sin φb - sin φa * cos d) / (cos φa * sin d)]</div>
+            </div>
+            
+            <h3>Cálculo de la Distancia</h3>
+            <div class="paso">
+                <h3>Paso 1: Definir Coordenadas y Calcular Δλ</h3>
+                <p>Las longitudes Oeste se consideran negativas.</p>
+                <p>φa = 40.00266°</p>
+                <p>λa = 3.835941°</p>
+                <p>φb = 39.00095°</p>
+                <p>λb = -0.168864°</p>
+                <p>Δλ = λb - λa = -0.168864 - 3.835941 = -4.004805°</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Calcular Distancia Angular (d)</h3>
+                <div class="formula">d = arccos[(sin(40.00266) * sin(39.00095)) + (cos(40.00266) * cos(39.00095) * cos(-4.004805))]</div>
+                <p>d = arccos[(0.64282 * 0.62933) + (0.76601 * 0.77713 * 0.99756)]</p>
+                <p>d = arccos[0.40457 + 0.59392]</p>
+                <p>d = arccos[0.99849] ≈ 3.016°</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 3: Convertir Distancia Angular a Kilómetros</h3>
+                <div class="formula">Distancia AB (km) = d × 111.11 km/°</div>
+                <p>Distancia AB = 3.016 * 111.11</p>
+            </div>
+            <div class="resultado">Distancia AB ≈ 335.11 km</div>
+
+            <h3>Cálculo de la Orientación (Acimut)</h3>
+            <div class="paso" style="padding-bottom: 5px; margin-bottom: 5px;">
+                 <div class="formulas-previas" style="background-color: #e9f5ff; border-color: #007bff; margin-top: 0; margin-bottom: 20px;">
+                    <h4 style="border:none; margin-top:0;">Regla de Decisión para el Acimut (con fórmula <code>arccos</code>)</h4>
+                    <p>El ángulo 'AB' que se obtiene de esta fórmula <code>arccos[...]</code> siempre está entre 0° y 180°. Para convertirlo en un acimut real (0°-360°), necesitamos saber si el destino (B) está al Este o al Oeste del origen (A). Esto lo determina el signo de <b>Δλ (λb - λa)</b>.</p>
+                    <ul style="padding-left: 20px; margin-bottom: 0;">
+                        <li>Si <b>Δλ es positivo (> 0)</b>, el destino está al <b>Este</b>. El acimut es el valor calculado directamente: <code>Acimut = AB</code>.</li>
+                        <li>Si <b>Δλ es negativo (< 0)</b>, el destino está al <b>Oeste</b>. El acimut se calcula restando el valor del círculo completo: <code>Acimut = 360° - AB</code>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="paso">
+                <h3>Paso 1: Calcular Ángulo Base (AB)</h3>
+                <div class="formula">AB = arccos[(sin(39.00095) - sin(40.00266) * cos(3.016)) / (cos(40.00266) * sin(3.016))]</div>
+                <p>AB = arccos[(0.62933 - 0.64282 * 0.99862) / (0.76601 * 0.05263)]</p>
+                <p>AB = arccos[(0.62933 - 0.64194) / 0.04032]</p>
+                <p>AB = arccos[-0.00261 / 0.04032] = arccos[-0.06473] ≈ 93.71°</p>
+            </div>
+            <div class="paso">
+                <h3>Paso 2: Corregir para Obtener Acimut</h3>
+                <p>En nuestro caso, <b>Δλ es negativo</b> (-4.005°), lo que indica que el destino está al <b>Oeste</b>. Por lo tanto, aplicamos la corrección:</p>
+                <div class="formula">Acimut = 360° - AB</div>
+                <p>Acimut = 360° - 93.71°</p>
+            </div>
+            <div class="resultado">Orientación AB ≈ 266.29°</div>
+        </div>
     </div>
 
     <script>
