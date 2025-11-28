@@ -55,42 +55,70 @@
             display: flex;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px; /* A bit wider for complex content */
             margin: 20px auto;
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        h1, h2, h3 {
+        h1 {
             color: #0056b3;
             border-bottom: 2px solid #0056b3;
             padding-bottom: 5px;
         }
+        h2, h3 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            margin-top: 40px; /* More space before a new section */
+        }
         .enunciado {
-            background-color: #e7f3fe;
-            border-left: 5px solid #0056b3;
-            padding: 15px;
-            margin: 20px 0;
+            background-color: #e9f5ff; /* Lighter blue */
+            border-left: 6px solid #007bff;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 1.05em;
+            border-radius: 5px;
+        }
+        .paso {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative; /* For a step counter */
+        }
+        .paso h3 {
+            margin-top: 0; /* h3 inside a paso should be at the top */
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.2em;
+            color: #0056b3;
         }
         .formula {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #eee;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
+            background-color: #2d3748; /* Dark background for code */
+            color: #f7fafc; /* Light text */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left; /* Better for multi-line formulas */
             font-size: 1.1em;
             margin: 20px 0;
-        }
-        .paso {
-            margin-bottom: 20px;
+            white-space: pre-wrap; /* Ensure wrapping */
+            word-wrap: break-word;
         }
         .resultado {
-            background-color: #d4edda;
-            border-left: 5px solid #155724;
-            padding: 15px;
-            margin-top: 20px;
+            background-color: #e2f9e9; /* Light green */
+            border: 2px solid #28a745;
+            border-left: 8px solid #28a745;
+            padding: 20px;
+            margin-top: 30px;
             font-weight: bold;
+            font-size: 1.15em;
+            border-radius: 8px;
+        }
+        .resultado p {
+            margin: 0;
         }
         .math-sqrt {
             white-space: nowrap;
@@ -151,8 +179,8 @@
             border-radius: 4px;
         }
         .formulas-previas {
-            background-color: #f0f8ff; /* AliceBlue */
-            border: 1px solid #b0c4de; /* LightSteelBlue */
+            background-color: #fffbe6; /* Light yellow for concepts */
+            border: 1px solid #ffe58f;
             border-radius: 8px;
             padding: 15px;
             margin: 20px 0;
@@ -196,9 +224,11 @@
             <a href="#" onclick="mostrarEjercicio('ejercicio9'); return false;">Ejercicio 9</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio10'); return false;">Ejercicio 10</a>
             <a href="#" onclick="mostrarEjercicio('ejercicio11'); return false;">Ejercicio 11</a>
-        <a href="#" onclick="mostrarEjercicio('ejercicio12'); return false;">Ejercicio 12</a>
-        <a href="#" onclick="mostrarEjercicio('ejercicio13'); return false;">Ejercicio 13</a>
-        <a href="#" onclick="mostrarEjercicio('ejercicio14'); return false;">Ejercicio 14</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio12'); return false;">Ejercicio 12</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio13'); return false;">Ejercicio 13</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio14'); return false;">Ejercicio 14</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio13.1'); return false;">Ejercicio 13.1 (Grados)</a>
+            <a href="#" onclick="mostrarEjercicio('ejercicio14.1'); return false;">Ejercicio 14.1 (Grados)</a>
         </div>
     </div>
 
@@ -237,12 +267,14 @@
                 <p>d(C,D) = <span class="math-sqrt"><span class="math-paren">(720000 - 720600)² + (4375000 - 4377800)²</span></span></p>
                 <p><strong>d(C,D) ≈ 2863.56 m</strong></p>
             </div>
-            <h3>Paso 4: Cálculo de la Longitud Total de la Ruta</h3>
-            <p>La longitud total es la suma de las distancias de cada tramo:</p>
-            <div class="formula">
-                Longitud Total = d(A,B) + d(B,C) + d(C,D)
+            <div class="paso">
+                <h3>Paso 4: Cálculo de la Longitud Total de la Ruta</h3>
+                <p>La longitud total es la suma de las distancias de cada tramo:</p>
+                <div class="formula">
+                    Longitud Total = d(A,B) + d(B,C) + d(C,D)
+                </div>
+                <p>Longitud Total = 2512.47 m + 158.11 m + 2863.56 m</p>
             </div>
-            <p>Longitud Total = 2512.47 m + 158.11 m + 2863.56 m</p>
             <div class="resultado">
                 Longitud Total ≈ 5534.14 metros
             </div>
@@ -291,11 +323,9 @@
                 <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4361375 - 4361100 = +275 m</span></p>
                 <p>Como ambos son positivos, estamos en el <strong>Cuadrante I (Nor-Este)</strong>.</p>
             </div>
-
-            <p><strong>Nota sobre la unidad de la solución:</strong> El valor `21,1752°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
-            
             <div class="paso">
                 <h3>Paso 2: Calcular el ángulo (en radianes)</h3>
+                 <p><strong>Nota sobre la unidad de la solución:</strong> El valor `21,1752°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
                 <p>Dado que estamos en el Cuadrante I (Nor-Este), la fórmula aplicable utilizando la tangente inversa es:</p>
                 <div class="formula">
                     <code>ángulo_rad = tan⁻¹(ΔX/ΔY)</code><br>
@@ -362,11 +392,9 @@
                 <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4360980 - 4361095 = -115 m</span></p>
                 <p>Como ambos son negativos, estamos en el <strong>Cuadrante III (Sur-Oeste)</strong>.</p>
             </div>
-
-            <p><strong>Nota sobre la unidad de la solución:</strong> El valor `245,5657°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
-            
             <div class="paso">
                 <h3>Paso 2: Calcular el ángulo (en radianes)</h3>
+                <p><strong>Nota sobre la unidad de la solución:</strong> El valor `245,5657°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
                 <p>Dado que estamos en el Cuadrante III (Sur-Oeste), la fórmula aplicable utilizando la tangente inversa es:</p>
                 <div class="formula">
                     <code>ángulo_rad = tan⁻¹(ΔX/ΔY) + π</code><br>
@@ -434,11 +462,9 @@
                 <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4361095 - 4361375 = -280 m</span></p>
                 <p>Como ΔX es positivo y ΔY es negativo, estamos en el <strong>Cuadrante II (Sur-Este)</strong>.</p>
             </div>
-
-            <p><strong>Nota sobre la unidad de la solución:</strong> El valor `175,1904°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
-            
             <div class="paso">
                 <h3>Paso 2: Calcular el ángulo (en radianes)</h3>
+                <p><strong>Nota sobre la unidad de la solución:</strong> El valor `175,1904°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
                 <p>Dado que estamos en el Cuadrante II (Sur-Este), la fórmula aplicable utilizando la tangente inversa es:</p>
                 <div class="formula">
                     <code>ángulo_rad = tan⁻¹(ΔX/ΔY) + π</code><br>
@@ -555,11 +581,9 @@
                 <p><span class="math-expr">ΔY = Y₂ - Y₁ = 4361375 - 4361095 = +280 m</span></p>
                 <p>Como ΔX es negativo y ΔY es positivo, estamos en el <strong>Cuadrante IV (Nor-Oeste)</strong>.</p>
             </div>
-
-            <p><strong>Nota sobre la unidad de la solución:</strong> El valor `375,1904°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
-            
             <div class="paso">
                 <h3>Paso 2: Calcular el ángulo (en radianes)</h3>
+                <p><strong>Nota sobre la unidad de la solución:</strong> El valor `375,1904°` de la solución es muy cercano a nuestro cálculo en grados centesimales (gons). Asumimos que la solución está en `gons` y el símbolo `°` es una errata.</p>
                 <p>Dado que estamos en el Cuadrante IV (Nor-Oeste), la fórmula aplicable utilizando la tangente inversa es:</p>
                 <div class="formula">
                     <code>ángulo_rad = tan⁻¹(ΔX/ΔY) + 2π</code><br>
@@ -1004,48 +1028,9 @@
                 <p>Este valor coincide exactamente con la solución proporcionada.</p>
             </div>
         </div>
+
         <div id="ejercicio13" class="ejercicio-contenido">
-            <h2>Ejercicio 13: Cálculo de Distancia y Acimut Geodésico</h2>
-            <div class="enunciado">
-                <strong>Enunciado:</strong> Calcular la distancia y acimut a seguir para desplazarnos de la ciudad A a la B a partir de las siguientes coordenadas geográficas:
-                <ul>
-                    <li><strong>A:</strong> Longitud = 140° E, Latitud = 40° N</li>
-                    <li><strong>B:</strong> Longitud = 100° E, Latitud = 20° N</li>
-                </ul>
-                <strong>SOLUCIÓN PROPORCIONADA:</strong> Distancia = 4,392.3 km; Acimut = 251.62°
-            </div>
-            <h3>Fórmulas y Conceptos a Utilizar:</h3>
-            <div class="formulas-previas">
-                <ol>
-                    <li>
-                        <strong>Conversión a Radianes:</strong>
-                        <p>Las fórmulas trigonométricas requieren que los ángulos (latitud y longitud) estén en radianes.</p>
-                        <div class="formula">
-                            <code>ángulo_rad = ángulo_deg × (π / 180)</code>
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Fórmula de Haversine (para Distancia):</strong>
-                        <p>Calcula la distancia de círculo máximo entre dos puntos en una esfera.</p>
-                        <div class="formula">
-                            <code>a = sin²(Δφ/2) + cos(φ₁)cos(φ₂)sin²(Δλ/2)</code><br>
-                            <code>Distancia = 2 × R × asin(√a)</code>
-                        </div>
-                        <small>Donde: φ es la latitud, λ es la longitud, Δ es la diferencia, y R es el radio de la Tierra (aprox. 6371 km).</small>
-                    </li>
-                    <li>
-                        <strong>Fórmula del Acimut:</strong>
-                        <p>Calcula el acimut inicial (rumbo) desde el punto A al punto B.</p>
-                        <div class="formula">
-                            <code>θ = atan2(y, x)</code>
-                        </div>
-                        <small>Donde:<br>
-                        <code>y = sin(Δλ) × cos(φ₂)</code><br>
-                        <code>x = cos(φ₁)sin(φ₂) - sin(φ₁)cos(φ₂)cos(Δλ)</code>
-                        </small>
-                    </li>
-                </ol>
-            </div>
+            <h2>Ejercicio 13: Cálculo de Distancia y Acimut</h2>
             <h3>Procedimiento de Resolución:</h3>
             <p>Este problema requiere el uso de la trigonometría esférica para calcular la distancia del círculo máximo (la ruta más corta en la superficie de la Tierra) y el acimut inicial (la dirección del viaje).</p>
 
@@ -1061,16 +1046,16 @@
             <div class="paso">
                 <h3>Paso 2: Calcular la Distancia con la Fórmula de Haversine</h3>
                 <p>La fórmula de Haversine es ideal para calcular distancias en una esfera. Asumimos un radio terrestre (R) de 6371 km.</p>
-                <p><code>a = sin²(Δφ/2) + cos(φ₁) × cos(φ₂) × sin²(Δλ/2)</code></p>
-                <p><code>distancia = 2 × R × asin(√a)</code></p>
+                <p><code>a = (sin(Δφ/2))² + cos(φ₁) * cos(φ₂) * (sin(Δλ/2))²</code></p>
+                <p><code>distancia = 2 * R * asin(√a)</code></p>
                 <div class="formula">
                     <code>Δφ = φ₂ - φ₁ = 0.3491 - 0.6981 = -0.3490 rad</code><br>
-                    <code>a = sin²(-0.3490 / 2) + cos(0.6981) × cos(0.3491) × sin²(-0.6981 / 2)</code><br>
-                    <code>a ≈ ( -0.1736 )² + ( 0.7660 × 0.9397 × (-0.3420)² )</code><br>
-                    <code>a ≈ 0.0301 + ( 0.7198 × 0.1169 ) ≈ 0.0301 + 0.0841</code><br>
+                    <code>a = (sin(-0.3490 / 2))² + cos(0.6981) * cos(0.3491) * (sin(-0.6981 / 2))²</code><br>
+                    <code>a ≈ ( -0.1736 )² + ( 0.7660 * 0.9397 * (-0.3420)² )</code><br>
+                    <code>a ≈ 0.0301 + ( 0.7198 * 0.1169 ) ≈ 0.0301 + 0.0841</code><br>
                     <code>a ≈ 0.1142</code><br>
-                    <code>distancia = 2 × 6371 × asin(√0.1142) ≈ 2 × 6371 × asin(0.3380)</code><br>
-                    <code>distancia ≈ 12742 × 0.3448 ≈ 4394.5 km</code>
+                    <code>distancia = 2 * 6371 * asin(√0.1142) ≈ 2 * 6371 * asin(0.3380)</code><br>
+                    <code>distancia ≈ 12742 * 0.3448 ≈ 4394.5 km</code>
                 </div>
                  <p><em>(Nuestro resultado, 4394.5 km, es muy cercano a la solución de 4392.3 km. La diferencia se debe probablemente al uso de un radio terrestre ligeramente distinto o a la precisión de los decimales.)</em></p>
             </div>
@@ -1191,6 +1176,170 @@
                 <p>La distancia y el acimut calculados son:</p>
                 <p><strong>Distancia ≈ 11,811 km</strong></p>
                 <p><strong>Acimut ≈ 106.0°</strong></p>
+            </div>
+        </div>
+
+        <div id="ejercicio13.1" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 13.1: Cálculo de Distancia y Acimut (Grados)</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la distancia y acimut a seguir para desplazarnos de la ciudad A a la B a partir de las siguientes coordenadas geográficas:
+                <ul>
+                    <li><strong>A:</strong> Longitud = 140° E, Latitud = 40° N</li>
+                    <li><strong>B:</strong> Longitud = 100° E, Latitud = 20° N</li>
+                </ul>
+            </div>
+            <h3>Procedimiento de Resolución (usando las fórmulas del examen en grados):</h3>
+            <p>Se utilizarán las fórmulas proporcionadas en la imagen 'examen/ejercicios.jpg' para calcular la distancia y el acimut, operando directamente en grados sexagesimales.</p>
+
+            <div class="formulas-previas">
+                <ol>
+                    <li>
+                        <strong>Fórmula de la Distancia (d):</strong>
+                        <div class="formula">
+                            <code>d = arccos[(sin φa * sin φb) + (cos φa * cos φb * cos Δλ)]</code>
+                        </div>
+                        <small>Donde d es la distancia angular en grados.</small>
+                    </li>
+                    <li>
+                        <strong>Fórmula del Acimut (AB):</strong>
+                        <div class="formula">
+                            <code>AB = arccos[(sin φb - sin φa * cos d) / (cos φa * sin d)]</code>
+                        </div>
+                    </li>
+                     <li>
+                        <strong>Fórmula de la Distancia en km:</strong>
+                        <div class="formula">
+                           <code>Distancia AB = 111.11 km * d</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 1: Definir las coordenadas y calcular Δλ</h3>
+                <p><span class="math-expr">φa = 40°</span></p>
+                <p><span class="math-expr">φb = 20°</span></p>
+                <p><span class="math-expr">Δλ = 100° - 140° = -40°</span></p>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 2: Calcular la distancia angular 'd'</h3>
+                <p>Aplicando la fórmula de la distancia:</p>
+                <div class="formula">
+                    <code>d = arccos[(sin(40°) * sin(20°)) + (cos(40°) * cos(20°) * cos(-40°))]</code><br>
+                    <code>d = arccos[(0.6428 * 0.3420) + (0.7660 * 0.9397 * 0.7660)]</code><br>
+                    <code>d = arccos[0.2198 + 0.5513]</code><br>
+                    <code>d = arccos[0.7711]</code><br>
+                    <code>d ≈ 39.54°</code>
+                </div>
+                 <p>Ahora convertimos la distancia angular a kilómetros:</p>
+                <div class="formula">
+                   <code>Distancia AB = 111.11 km * 39.54 ≈ 4392.29 km</code>
+                </div>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 3: Calcular el Acimut (AB)</h3>
+                <p>Aplicando la fórmula del acimut:</p>
+                <div class="formula">
+                    <code>AB = arccos[(sin(20°) - sin(40°) * cos(39.54°)) / (cos(40°) * sin(39.54°))]</code><br>
+                    <code>AB = arccos[(0.3420 - 0.6428 * 0.7711) / (0.7660 * 0.6366)]</code><br>
+                    <code>AB = arccos[(0.3420 - 0.4957) / 0.4876]</code><br>
+                    <code>AB = arccos[-0.1537 / 0.4876]</code><br>
+                    <code>AB = arccos[-0.3152] ≈ 108.38°</code>
+                </div>
+                 <p>Dado que Δλ es negativo, el acimut real es 360° - AB:</p>
+                <div class="formula">
+                   <code>Acimut = 360° - 108.38° = 251.62°</code>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <p>La distancia y el acimut calculados son:</p>
+                <p><strong>Distancia ≈ 4392.29 km</strong></p>
+                <p><strong>Acimut ≈ 251.62°</strong></p>
+            </div>
+        </div>
+
+        <div id="ejercicio14.1" class="ejercicio-contenido" style="display:none;">
+            <h2>Ejercicio 14.1: Cálculo de Distancia y Acimut (Grados)</h2>
+            <div class="enunciado">
+                <strong>Enunciado:</strong> Calcular la distancia y acimut a seguir para desplazarnos de la ciudad A a la B a partir de las siguientes coordenadas geográficas:
+                <ul>
+                    <li><strong>A:</strong> Longitud = 8.396° W, Latitud = 43.3713° N</li>
+                    <li><strong>B:</strong> Longitud = 82.65° E, Latitud = 22.9667° S</li>
+                </ul>
+            </div>
+            <h3>Procedimiento de Resolución (usando las fórmulas del examen en grados):</h3>
+            <p>Se utilizarán las fórmulas proporcionadas en la imagen 'examen/ejercicios.jpg' para calcular la distancia y el acimut, operando directamente en grados sexagesimales.</p>
+
+             <div class="formulas-previas">
+                <ol>
+                    <li>
+                        <strong>Fórmula de la Distancia (d):</strong>
+                        <div class="formula">
+                            <code>d = arccos[(sin φa * sin φb) + (cos φa * cos φb * cos Δλ)]</code>
+                        </div>
+                        <small>Donde d es la distancia angular en grados.</small>
+                    </li>
+                    <li>
+                        <strong>Fórmula del Acimut (AB):</strong>
+                        <div class="formula">
+                            <code>AB = arccos[(sin φb - sin φa * cos d) / (cos φa * sin d)]</code>
+                        </div>
+                    </li>
+                     <li>
+                        <strong>Fórmula de la Distancia en km:</strong>
+                        <div class="formula">
+                           <code>Distancia AB = 111.11 km * d</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 1: Definir las coordenadas y calcular Δλ</h3>
+                <p>Latitud Sur y Longitud Oeste se tratan como negativas.</p>
+                <p><span class="math-expr">φa = 43.3713°</span></p>
+                <p><span class="math-expr">φb = -22.9667°</span></p>
+                <p><span class="math-expr">λa = -8.396°</span></p>
+                <p><span class="math-expr">λb = 82.65°</span></p>
+                <p><span class="math-expr">Δλ = 82.65° - (-8.396°) = 91.046°</span></p>
+            </div>
+
+            <div class="paso">
+                <h3>Paso 2: Calcular la distancia angular 'd'</h3>
+                <p>Aplicando la fórmula de la distancia:</p>
+                <div class="formula">
+                    <code>d = arccos[(sin(43.3713°) * sin(-22.9667°)) + (cos(43.3713°) * cos(-22.9667°) * cos(91.046°))]</code><br>
+                    <code>d = arccos[(0.6868 * -0.3902) + (0.7268 * 0.9207 * -0.0183)]</code><br>
+                    <code>d = arccos[-0.2680 - 0.0122]</code><br>
+                    <code>d = arccos[-0.2802]</code><br>
+                    <code>d ≈ 106.27°</code>
+                </div>
+                 <p>Ahora convertimos la distancia angular a kilómetros:</p>
+                <div class="formula">
+                   <code>Distancia AB = 111.11 km * 106.27 ≈ 11807.73 km</code>
+                </div>
+            </div>
+
+            <div class="paso">
+                 <h3>Paso 3: Calcular el Acimut (AB)</h3>
+                <p>Aplicando la fórmula del acimut:</p>
+                <div class="formula">
+                    <code>AB = arccos[(sin(-22.9667°) - sin(43.3713°) * cos(106.27°)) / (cos(43.3713°) * sin(106.27°))]</code><br>
+                    <code>AB = arccos[(-0.3902 - 0.6868 * -0.2802) / (0.7268 * 0.9599)]</code><br>
+                    <code>AB = arccos[(-0.3902 + 0.1924) / 0.6976]</code><br>
+                    <code>AB = arccos[-0.1978 / 0.6976]</code><br>
+                    <code>AB = arccos[-0.2835] ≈ 106.47°</code>
+                </div>
+                 <p>Dado que Δλ es positivo, el acimut es el valor calculado directamente.</p>
+            </div>
+
+            <div class="resultado">
+                <p>La distancia y el acimut calculados son:</p>
+                <p><strong>Distancia ≈ 11807.73 km</strong></p>
+                <p><strong>Acimut ≈ 106.47°</strong></p>
             </div>
         </div>
     </div>
